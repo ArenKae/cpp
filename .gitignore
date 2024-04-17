@@ -18,7 +18,6 @@ obj/
 libft.a
 *.a
 *.out
-minishell
 test*
 
 # MEMO : delete folder from remote :

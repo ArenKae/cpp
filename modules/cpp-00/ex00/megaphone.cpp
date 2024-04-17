@@ -11,7 +11,7 @@ int    megaphone(int ac, char **av)
             j++;
         while (av[i][j])
         {
-            std::cout << (char)toupper(av[i][j]), j++; // Convert to uppercase and print to stout
+            std::cout << (char)toupper(av[i][j]), j++; // Convert to uppercase and print to stdout
             if (isspace(av[i][j]) && (isspace(av[i][j + 1]) || !av[i][j + 1]))
                 while(av[i][j] && isspace(av[i][j]))
                     j++; // Skip spaces at the end of a word

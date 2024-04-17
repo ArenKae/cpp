@@ -9,7 +9,6 @@
 desktop.ini
 settings.json
 *.swp
-test
 
 # Object files
 obj/

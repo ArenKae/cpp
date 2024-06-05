@@ -11,7 +11,7 @@
 
 // Première définition d'une variable globale et d'une fonction.
 int global = 1;
-int ft(void) { return 5;}
+int ft(void) { return 5; }
 
 /*
     Le namespace "Foo" est créé et contient 2 objets global et ft() ayant leur
@@ -21,7 +21,7 @@ int ft(void) { return 5;}
 namespace Foo
 {
     int global = 2;
-    int ft(void) { return 10;}  
+    int ft(void) { return 10; }  
 }
 
 /*

@@ -13,7 +13,7 @@ int main(void)
     while (1)
     {
         printPrompt();
-        std::cin >> prompt && std::cout << std::endl;
+        std::getline(std::cin, prompt) && std::cout << std::endl;
         if (!std::cin || prompt.empty()) {
             std::cerr << "Input error" << std::endl;
             return (1);}

@@ -12,8 +12,12 @@ class Contact
 		std::string number;
 		std::string secret;
 	public:
+		Contact(void);
+		~Contact(void);
 		int index;
-		void add_infos(void);
+		void add_infos(int i);
+		void print_contact_list(void);
+		void trim_and_print(std::string);
 };
 
 #endif

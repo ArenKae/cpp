@@ -34,7 +34,7 @@ int main(void)
         l'interprétation du '\n' pouvant varier selon l'OS. De plus, il s'agit
         d'une pratique plus sécurisée et "propre" (mais moins performance efficiente)
         car std::endl vide le tampon associé au flux de sortie, ce qui garantit
-        l'affichage immédiat des données et évite qu'elles soient "buffurisées".
+        l'affichage immédiat des données et évite qu'elles soient "bufferisées".
     */
 
     std::cout << "I love 42!" << std::endl;

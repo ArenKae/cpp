@@ -11,5 +11,6 @@
 
 void printPrompt(void);
 void printError(const std::string& message);
+void errorEmpty(void);
 
 #endif

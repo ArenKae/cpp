@@ -15,3 +15,9 @@ void printPrompt(void)
 	std::cout << GREEN << "EXIT" << RESET << std::endl;
 	std::cout << std::endl;
 }
+
+void errorEmpty(void)
+{
+	std::cerr << RED << "Error: A contact can't have empty fields." << RESET << std::endl;
+	return ;
+}

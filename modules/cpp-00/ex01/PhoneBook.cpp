@@ -29,6 +29,7 @@ void    PhoneBook::ft_search()
 
 	std::cout << "-----------------------------------------" << std::endl;
     std::cout << YELLOW << "[My contact]" << RESET << std::endl;
+    std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME" << std::endl;
 	while (MyContacts[i].index > 0 && i < 7) {
 		PhoneBook::MyContacts[i].print_contact_list(); 
 		i++; }

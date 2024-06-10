@@ -1,12 +1,14 @@
+#include "utils.hpp"
 #include <iostream>
-#include "colors.hpp"
 
-void printError(const std::string& message)
+void print_error(const std::string& message, int flag)
 {
+	if (flag == 0)
+		std::cout << "\n";
 	std::cout << RED << "Error: " << message << RESET << std::endl;
 }
 
-void printPrompt(void)
+void print_prompt(void)
 {
 	std::cout << std::endl;
 	std::cout << CYAN << "Available commands :" << std::endl;
@@ -16,7 +18,7 @@ void printPrompt(void)
 	std::cout << std::endl;
 }
 
-void errorEmpty(void)
+void error_empty(void)
 {
 	std::cerr << RED << "Error: A contact can't have empty fields." << RESET << std::endl;
 	return ;

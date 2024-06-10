@@ -1,5 +1,5 @@
 #include "Contact.hpp"
-#include "colors.hpp"
+#include "utils.hpp"
 #include <iostream>
 
 Contact::Contact(void)
@@ -19,23 +19,23 @@ void    Contact::add_infos(int i)
 	std::cout << "First name: ";
 	std::getline(std::cin, this->first_name);
 	if (this->first_name.empty())
-    	return errorEmpty();
+    	return error_empty();
 	std::cout << "Last name: ";
 	std::getline(std::cin, this->last_name);
 	if (this->last_name.empty())
-		return errorEmpty();
+		return error_empty();
 	std::cout << "Nickname: ";
 	std::getline(std::cin, this->nickname);
 	if (this->nickname.empty())
-		return errorEmpty();
+		return error_empty();
 	std::cout << "Number: ";
 	std::getline(std::cin, this->number);
 	if (this->number.empty())
-		return errorEmpty();
+		return error_empty();
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, this->secret);
 	if (this->secret.empty())
-		return errorEmpty();
+		return error_empty();
 	std::cout << "\n" << GREEN << ">>> New contact successfully added." << RESET << std::endl;
 	this->index = i + 1;
 }
@@ -107,11 +107,10 @@ void Contact::trim_and_print(std::string info)
     std::cout << "|";
 }
 
-
 void	Contact::print_contact_list(void)
 {
 	if (index > 0 && index < 9)
-		std::cout << "         " << this->index << "|";
+		std::cout << "|         " << this->index << "|";
 	trim_and_print(this->first_name);
 	trim_and_print(this->last_name);
 	trim_and_print(this->nickname);
@@ -120,6 +119,9 @@ void	Contact::print_contact_list(void)
 
 void    Contact::display_contact_infos(int i)
 {
+    if (this->index == -1 || i <= 0) {
+        print_error("This contact does not exist.", NEWLINE);
+        return ;}
     std::cout << "\n" << GREEN << ">>> Displaying contact " << YELLOW << "[" << RESET << i << YELLOW << "]" ;
     std::cout << GREEN << " infos." << RESET << std::endl;
     std::cout << "--------------------------------------------" << std::endl;

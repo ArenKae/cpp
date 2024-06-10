@@ -1,6 +1,6 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
-#include "colors.hpp"
+#include "utils.hpp"
 #include <iostream>
 
 int main(void)
@@ -12,11 +12,11 @@ int main(void)
     std::cout << MAGENTA << "WELCOME TO MY AWESOME PHONEBOOK!" << RESET << std::endl;
     while (1)
     {
-        printPrompt();
+        print_prompt();
         if (!std::getline(std::cin, input))
-            return 1;
+            return 1;   // Ctrl+D
         else if (input.empty())
-            printError("Empty input.");
+            print_error("Empty input.", NONEWLINE);
         else if (!input.compare("add") || !input.compare("ADD")) {
             if (i > 7)
                 i = 0;
@@ -27,7 +27,7 @@ int main(void)
             std::cout << std::endl << GREEN << ">>> Bye!" << RESET << std::endl;
             return 0;}
         else
-            printError("Please enter a valid command.");
+            print_error("Please enter a valid command.", NEWLINE);
     }
     return 0;
 }

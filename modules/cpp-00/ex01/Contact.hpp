@@ -19,6 +19,7 @@ class Contact
 		void print_contact_list(void);
 		void trim_and_print(std::string);
 		void trim(std::string);
+		void display_contact_infos(int);
 };
 
 #endif

@@ -40,7 +40,8 @@ void    Contact::add_infos(int i)
 	this->index = i + 1;
 }
 
-int count_displayable_characters(const std::string& str) {
+int input_length(const std::string& str)
+{
     int count = 0;
     for (std::size_t i = 0; i < str.size(); ) {
         unsigned char c = str[i];
@@ -67,7 +68,8 @@ int count_displayable_characters(const std::string& str) {
 
 void Contact::trim_and_print(std::string info)
 {
-    int len = count_displayable_characters(info);
+    int len = input_length(info);
+
     if (len > 10) {
         // Truncate the string and add a dot at the end
         int char_count = 0;
@@ -114,4 +116,17 @@ void	Contact::print_contact_list(void)
 	trim_and_print(this->last_name);
 	trim_and_print(this->nickname);
 	std::cout << std::endl;
+}
+
+void    Contact::display_contact_infos(int i)
+{
+    std::cout << "\n" << GREEN << ">>> Displaying contact " << YELLOW << "[" << RESET << i << YELLOW << "]" ;
+    std::cout << GREEN << " infos." << RESET << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+    std::cout << "First name: " << this->first_name << std::endl;
+    std::cout << "Last name: " << this->last_name << std::endl;
+    std::cout << "Nickname: " << this->nickname << std::endl;
+    std::cout << "Phone number: " << this->number << std::endl;
+    std::cout << "Darkest secret: " << this->secret << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
 }

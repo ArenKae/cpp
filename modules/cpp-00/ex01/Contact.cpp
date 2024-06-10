@@ -40,17 +40,78 @@ void    Contact::add_infos(int i)
 	this->index = i + 1;
 }
 
-void	Contact::trim_and_print(std::string)
-{
-
+int count_displayable_characters(const std::string& str) {
+    int count = 0;
+    for (std::size_t i = 0; i < str.size(); ) {
+        unsigned char c = str[i];
+        if (c < 128) {
+            // ASCII character
+            i += 1;
+        } else if ((c >> 5) == 0b110) {
+            // Two-byte character
+            i += 2;
+        } else if ((c >> 4) == 0b1110) {
+            // Three-byte character
+            i += 3;
+        } else if ((c >> 3) == 0b11110) {
+            // Four-byte character
+            i += 4;
+        } else {
+            // Invalid UTF-8, just skip this byte
+            i += 1;
+        }
+        count++;
+    }
+    return count;
 }
+
+void Contact::trim_and_print(std::string info)
+{
+    int len = count_displayable_characters(info);
+    if (len > 10) {
+        // Truncate the string and add a dot at the end
+        int char_count = 0;
+        for (std::size_t i = 0; i < info.size(); ) {
+            unsigned char c = info[i];
+            if (c < 128) {
+                std::cout << info[i];
+                i += 1;
+            } else if ((c >> 5) == 0b110) {
+                std::cout << info.substr(i, 2);
+                i += 2;
+            } else if ((c >> 4) == 0b1110) {
+                std::cout << info.substr(i, 3);
+                i += 3;
+            } else if ((c >> 3) == 0b11110) {
+                std::cout << info.substr(i, 4);
+                i += 4;
+            } else {
+                i += 1;
+            }
+            char_count++;
+            if (char_count == 9) {
+                std::cout << ".";
+                break;
+            }
+        }
+    } else {
+        int diff = 10 - len;
+        while (diff > 0) {
+            std::cout << " ";
+            diff--;
+        }
+        std::cout << info;
+    }
+    std::cout << "|";
+}
+
 
 void	Contact::print_contact_list(void)
 {
-	if (index > 0 && index < 7)
+	if (index > 0 && index < 9)
 		std::cout << "         " << this->index << "|";
 	trim_and_print(this->first_name);
-
+	trim_and_print(this->last_name);
+	trim_and_print(this->nickname);
 	std::cout << std::endl;
-	//std::cout << this->index << this->first_name << this->last_name << this->nickname << std::endl;
 }

@@ -24,7 +24,7 @@ int main(void)
         else if (!input.compare("search") || !input.compare("SEARCH"))
             MyBook.ft_search();
         else if (!input.compare("exit") || !input.compare("EXIT")) {
-            std::cout << GREEN << ">>> Bye!" << RESET << std::endl;
+            std::cout << std::endl << GREEN << ">>> Bye!" << RESET << std::endl;
             return 0;}
         else
             printError("Please enter a valid command.");

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/17 14:50:30 by acosi             #+#    #+#             */
+/*   Updated: 2024/06/17 14:52:59 by acosi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include "utils.hpp"
@@ -17,13 +29,13 @@ int main(void)
             return 1;   // Ctrl+D
         else if (input.empty())
             print_error("Empty input.", NONEWLINE);
-        else if (!input.compare("add") || !input.compare("ADD")) {
+        else if (!input.compare("ADD")) {
             if (i > 7)
                 i = 0;
             MyBook.ft_add(i), i++;}
-        else if (!input.compare("search") || !input.compare("SEARCH"))
+        else if (!input.compare("SEARCH"))
             MyBook.ft_search();
-        else if (!input.compare("exit") || !input.compare("EXIT")) {
+        else if (!input.compare("EXIT")) {
             std::cout << std::endl << GREEN << ">>> Bye!" << RESET << std::endl;
             return 0;}
         else

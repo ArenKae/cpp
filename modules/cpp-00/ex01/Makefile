@@ -82,3 +82,6 @@ fclean : do_fclean clean
 
 re :	fclean all
 	@echo "$(CYAN)Cleaned and rebuilt everything for MyPhoneBook!$(DEF_COLOR)"
+
+# Phony targets are used to differenciate makefile rules from system files.
+.PHONY: all clean fclean re nothing_to_be_done do_fclean

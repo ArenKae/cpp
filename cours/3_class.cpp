@@ -2,10 +2,10 @@
 
 #include <iostream>
 #include <unistd.h>
-#include "class.hpp"
+#include "3_class.hpp"
 
 /*
-    Le constructeur est appelé auutomatiquement au moment où une nouvelle instance
+    Le constructeur est appelé automatiquement au moment où une nouvelle instance
     de classe est crée. La classe 'Personnage' déclaré dans le .hpp sert de "moule" pour
     créer une instance unique de type Personnage. Le constructeur est utile pour initialiser
     des variables ou allouer de la mémoire à la création d'une nouvelle instance de classe.
@@ -15,9 +15,10 @@ Personnage::Personnage(void) // Constructeur Personnage de la classe Personnage
 {
     std::cout << "Appel du constructeur." << std::endl;
 
-    // Initialise les données
     // Le mot-clé 'this' sert à désigner l'objet (ou l'instance de la classe) qui appelle 
-    // le constructeur. 'this' peut uniquement être utilisé au sein des méthodes d'une classe. 
+    // le constructeur. 'this' peut uniquement être utilisé au sein des méthodes d'une classe.
+	// this est un pointeur implicite qui fait référence à l'objet actuel au sein d'une méthode
+	// de classe. 
     this->Nom = "Arren Kae";
     this->Âge = 42;
 }

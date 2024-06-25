@@ -5,25 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 18:20:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/25 23:01:31 by acosi            ###   ########.fr       */
+/*   Created: 2024/06/25 23:04:28 by acosi             #+#    #+#             */
+/*   Updated: 2024/06/26 00:39:43 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
-int	main(void)
+int main(void)
 {
-	// Creates a zombie on the heap
-	Zombie* JohnyHeap = newZombie("JohnyHeap");
-	JohnyHeap->announce();
+    Zombie * Horde = zombieHorde(10, "Toto");
 
-	// Create a zombie on the stack
-	randomChump("JackStack");
-	
-	// Deletes the heap allocated zombie
-	delete JohnyHeap;
-	
-	return 0;
+    // Additionnal tests
+    std::cout << std::endl;
+    Horde->announce(); // First element of the Horde
+    Horde[3].announce(); // Another element of the Horde
+    std::cout << std::endl;
+    
+    delete [] Horde;
+    return 0;
 }

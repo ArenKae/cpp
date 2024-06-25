@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 18:57:53 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/25 20:20:41 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/25 22:55:42 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@
 Zombie* newZombie(std::string name)
 {
 	Zombie* JohnyHeap = new Zombie(name);
-	//JohnyHeap->setName(name);
 	return(JohnyHeap);
 }

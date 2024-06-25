@@ -5,25 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 15:10:56 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/25 22:55:38 by acosi            ###   ########.fr       */
+/*   Created: 2024/06/25 23:08:51 by acosi             #+#    #+#             */
+/*   Updated: 2024/06/26 00:00:51 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
-Zombie::Zombie(std::string str) : name(str)
+Zombie::Zombie(void)
 {
 	//std::cout << this->name << " constructor called." << std::endl;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << " destructor called." << std::endl;
+	std::cout << this->name << "[" << this->index << "]" << " destructor called." << std::endl;
 }
 
 void Zombie::announce(void)
 {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->name << "[" << this->index << "]" << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::setIndex(int i)
+{
+    this->index = i;
+}
+
+void Zombie::setName(std::string name)
+{
+    this->name = name;
 }

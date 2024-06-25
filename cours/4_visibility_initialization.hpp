@@ -1,4 +1,4 @@
-// CLASS VS STRUCT
+// VISIBILITY & INITIALIZATION
 
 #ifndef CLASS_VS_STRUCT_H
 #define CLASS_VS_STRUCT_H
@@ -20,8 +20,10 @@ class Character // Déclaration d'une nouvelle classe "Character"
         std::string name;
         int level;
 
-        Character(void); // Constructeur 
+        Character(std::string str, int gold, int helath); // Constructeur prenant 2 paramètres à initialiser
         ~Character(void); // Destructeur
+
+		// Mutators are used to edit private or protected data :
 		void editGold(int amount);	// Méthode public pour manipuler l'or d'un personnage.
 		void takeDamage(int dmg);	// Méthode public pour infliger des dégâts.
 
@@ -34,8 +36,8 @@ class Character // Déclaration d'une nouvelle classe "Character"
 	// Les membres "protected" ne sont accessibles que depuis l'intérieur d'une classe et de
 	// ses classes dérivées ou classes "enfant" (voir notion d'héritage).
 	protected:
-		int health;
-		void applyDamage(int dmg);
+		int _health;
+		void _applyDamage(int dmg);
 };
 
 #endif

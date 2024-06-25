@@ -17,21 +17,25 @@ class Character // Déclaration d'une nouvelle classe "Character"
 	// Spécificateur d'accès :
     // Les membres "public" sont accessibles depuis n'importe où dans le programme.
 	public:
-        std::string name;
+        std::string const name; // Le nom du personnage est une constante.
         int level;
 
-        Character(std::string str, int gold, int helath); // Constructeur prenant 2 paramètres à initialiser
+        Character(std::string str, int credits, int helath); // Constructeur prenant 2 paramètres à initialiser
         ~Character(void); // Destructeur
 
-		// Mutators are used to edit private or protected data :
-		void editGold(int amount);	// Méthode public pour manipuler l'or d'un personnage.
-		void takeDamage(int dmg);	// Méthode public pour infliger des dégâts.
+		// Les accesseurs (accessors) sont des fonctions permettant de lire des données private/protected :
+		int getHealth(void) const; 	// const indique ici que cette fonction membre ne modifiera pas notre
+		int getCredits(void) const;	// instance actuelle de la classe Character (mode lecture seule).
+
+		// Les mutateurs (mutators) permettent de modifier des données private/protected :
+		void editCredits(int amount);
+		void takeDamage(int dmg);
 
 	// Les membres "private" ne sont accessibles que depuis l'intérieur de la classe.
 	// This is useful for encapsulation to control what is accessible or not to the user.
 	private:
-		int _gold;					// Le nom d'un membre privé est souvent précédé 
-		void _addGold(int amount);	// d'un underscore '_' par convention.
+		int _credits;					// Le nom d'un membre privé est souvent précédé 
+		void _addCredits(int amount);	// d'un underscore '_' par convention.
 
 	// Les membres "protected" ne sont accessibles que depuis l'intérieur d'une classe et de
 	// ses classes dérivées ou classes "enfant" (voir notion d'héritage).

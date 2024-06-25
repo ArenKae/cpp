@@ -28,6 +28,7 @@ void Character::_addCredits(int amount)
 // Public method (mutator) to safely add crédits.
 void Character::editCredits(int amount)
 {
+	if (amount != 0)
 	this->_addCredits(amount);
 	std::cout << this->name << " gained " << amount << " credits." << std::endl;
 }
@@ -48,6 +49,7 @@ void Character::_applyDamage(int value)
 // Public method (mutator) to safely apply damage.
 void Character::takeDamage(int value)
 {
+	if (value > 0)
 	this->_applyDamage(value);
 	std::cout << this->name << " received " << value << " damage." << std::endl;
 }

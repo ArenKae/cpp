@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 15:02:24 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/25 20:19:43 by acosi            ###   ########.fr       */
+/*   Created: 2024/06/25 18:20:49 by acosi             #+#    #+#             */
+/*   Updated: 2024/06/25 20:20:30 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
-
+#include "Zombie.hpp"
 #include <iostream>
 
-class Zombie
+int	main(void)
 {
-	public:
-		Zombie(std::string str);
-		~Zombie(void);
-		void announce(void);
-		//void setName(std::string name);
-	private:
-		std::string name;
-};
+	// Creates a zombie on the heap
+	Zombie* JohnyHeap = newZombie("JohnyHeap");
+	JohnyHeap->announce();
 
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
-
-#endif
+	// Create a zombie on the stack
+	randomChump("JackStack");
+	
+	// Deletes the heap allocated zombie
+	delete JohnyHeap;
+	
+	return 0;
+}

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 15:02:24 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/25 20:19:43 by acosi            ###   ########.fr       */
+/*   Created: 2024/06/25 18:57:53 by acosi             #+#    #+#             */
+/*   Updated: 2024/06/25 20:20:41 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
-
+#include "Zombie.hpp"
 #include <iostream>
 
-class Zombie
+Zombie* newZombie(std::string name)
 {
-	public:
-		Zombie(std::string str);
-		~Zombie(void);
-		void announce(void);
-		//void setName(std::string name);
-	private:
-		std::string name;
-};
-
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
-
-#endif
+	Zombie* JohnyHeap = new Zombie(name);
+	//JohnyHeap->setName(name);
+	return(JohnyHeap);
+}

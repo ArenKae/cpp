@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:51:04 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/17 14:51:05 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/26 04:41:13 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void print_error(const std::string& message, int flag)
 {
 	if (flag == 0)
 		std::cout << "\n";
-	std::cout << RED << "Error: " << message << RESET << std::endl;
+	std::cerr << RED << "Error: " << message << RESET << std::endl;
 }
 
 void print_prompt(void)

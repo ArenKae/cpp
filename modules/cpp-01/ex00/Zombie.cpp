@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:10:56 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/25 22:55:38 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/27 04:09:28 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
 Zombie::Zombie(std::string str) : name(str)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:51:04 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/26 04:41:13 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/30 06:07:02 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ void print_prompt(void)
 	std::cout << std::endl;
 }
 
-void error_empty(void)
+void error_empty(int *i)
 {
 	std::cerr << RED << "Error: A contact can't have empty fields." << RESET << std::endl;
+	*i -= 1; // In case of error, prevents iterator i from increasing in the main()
 	return ;
 }

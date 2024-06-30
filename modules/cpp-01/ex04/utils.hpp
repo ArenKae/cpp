@@ -6,14 +6,12 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:51:08 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 06:02:39 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/30 05:01:24 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 #define UTILS_H
-
-#include <iostream>
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -23,11 +21,13 @@
 #define CYAN "\033[36m"
 #define RESET "\033[0m"
 
-#define NEWLINE 0
-#define NONEWLINE 1
+#define EXIT_SUCCESS 0
+#define EXIT_FAILURE 1
+#define OPEN 2
+#define CREATE 3
+#define TOO_MANY_ARGS 4
+#define TOO_FEW_ARGS 5
 
-void print_prompt(void);
-void print_error(const std::string& message, int flag);
-void error_empty(int *i);
+int	print_error(const char* filename, int flag);
 
 #endif

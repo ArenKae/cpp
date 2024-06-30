@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:50:47 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/17 14:50:47 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/30 06:02:28 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,31 +25,30 @@ Contact::~Contact(void)
     //std::cout << "Contact destructor called." << std::endl;
 }
 
-void    Contact::add_infos(int i)
+void    Contact::add_infos(int *i)
 {
-	//this->index = i + 1;
 	std::cout << "First name: ";
 	std::getline(std::cin, this->first_name);
 	if (this->first_name.empty())
-    	return error_empty();
+    	return error_empty(i);
 	std::cout << "Last name: ";
 	std::getline(std::cin, this->last_name);
 	if (this->last_name.empty())
-		return error_empty();
+		return error_empty(i);
 	std::cout << "Nickname: ";
 	std::getline(std::cin, this->nickname);
 	if (this->nickname.empty())
-		return error_empty();
+		return error_empty(i);
 	std::cout << "Number: ";
 	std::getline(std::cin, this->number);
 	if (this->number.empty())
-		return error_empty();
+		return error_empty(i);
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, this->secret);
 	if (this->secret.empty())
-		return error_empty();
+		return error_empty(i);
 	std::cout << "\n" << GREEN << ">>> New contact successfully added." << RESET << std::endl;
-	this->index = i + 1;
+	this->index = *i + 1;
 }
 
 int input_length(const std::string& str)

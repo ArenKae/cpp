@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:51:17 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/17 14:51:18 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/30 06:01:39 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Contact
 		Contact(void);
 		~Contact(void);
 		int index;
-		void add_infos(int i);
+		void add_infos(int *i);
 		void print_contact_list(void);
 		void trim_and_print(std::string);
 		void trim(std::string);

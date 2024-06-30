@@ -11,7 +11,7 @@ WHITE = \033[0;97m
 
 ### VARIABLES ###
 
-NAME = megaphone
+NAME = harl
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJF = .cache_exists	# needed to create obj/ directory
@@ -22,7 +22,7 @@ update_flag := false
 OBJ_DIR = obj/
 
 # Source Files
-SRC_FILES = megaphone.cpp
+SRC_FILES = main.cpp Harl.cpp
 
 # Object Files
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
@@ -42,7 +42,7 @@ $(OBJ_DIR)%.o : %.cpp | $(OBJF)
 # Compiling all objets files (.o) to a file "NAME" :
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) $^ -o $@
-	@echo "$(GREEN)>>> Megaphone compiled!$(DEF_COLOR)"
+	@echo "$(GREEN)>>> Replace compiled!$(DEF_COLOR)"
 	@$(eval update_flag := true)
 
 ### MEMO ###
@@ -68,20 +68,20 @@ do_fclean:
 	@$(eval fclean_flag := true)
 
 clean :
-	@echo "$(YELLOW)Cleaning Megaphone... $(DEF_COLOR)"
+	@echo "$(YELLOW)Cleaning Replace... $(DEF_COLOR)"
 	@rm -rf $(OBJ_DIR)
 	@if [ "$(fclean_flag)" = "false" ]; then \
-		echo "$(GREEN)>>> Megaphone object files cleaned!$(DEF_COLOR)"; \
+		echo "$(GREEN)>>> Replace object files cleaned!$(DEF_COLOR)"; \
 fi
 	@if [ "$(fclean_flag)" = "true" ]; then \
-		echo "$(GREEN)>>> Megaphone object files & executables cleaned!$(DEF_COLOR)"; \
+		echo "$(GREEN)>>> Replace object files & executables cleaned!$(DEF_COLOR)"; \
 fi
 
 fclean : do_fclean clean
 	@rm -f $(NAME)
 
 re :	fclean all
-	@echo "$(CYAN)Cleaned and rebuilt everything for Megaphone!$(DEF_COLOR)"
+	@echo "$(CYAN)Cleaned and rebuilt everything for Replace!$(DEF_COLOR)"
 
 # Phony targets are used to differenciate makefile rules from system files.
 .PHONY: all clean fclean re nothing_to_be_done do_fclean

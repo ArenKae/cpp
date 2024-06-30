@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:50:30 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/17 14:52:59 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/30 06:00:10 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int main(void)
         else if (!input.compare("ADD")) {
             if (i > 7)
                 i = 0;
-            MyBook.ft_add(i), i++;}
+			std::cout << "i= " << i << std::endl;
+            MyBook.ft_add(&i), i++;}
         else if (!input.compare("SEARCH"))
             MyBook.ft_search();
         else if (!input.compare("EXIT")) {

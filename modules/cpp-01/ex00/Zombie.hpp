@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:02:24 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/25 22:55:35 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/30 23:11:12 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class Zombie
 {
+	private:
+		std::string name;
 	public:
 		Zombie(std::string str);
 		~Zombie(void);
 		void announce(void);
-	private:
-		std::string name;
 };
 
 Zombie*	newZombie(std::string name);

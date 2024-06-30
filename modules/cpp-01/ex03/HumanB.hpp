@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 01:20:23 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/26 03:56:16 by acosi            ###   ########.fr       */
+/*   Updated: 2024/06/30 23:10:23 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 
 class HumanB
 {
+    private:
+		std::string _name;
+        Weapon* _weapon;
 	public:
 		HumanB(std::string name);
 		~HumanB(void);
         void attack();
         void setWeapon(Weapon& type);
-	private:
-		std::string _name;
-        Weapon* _weapon;
+
 };
 
 #endif

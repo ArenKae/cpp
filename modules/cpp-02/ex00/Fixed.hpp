@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:05 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 02:05:42 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/01 02:49:45 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,13 @@ public:
 	int getFpValue(void) const;
 	
 private:
-	int _fpValue;                   // Represents the integer part
-	const static int _fbits = 8;    // Represents the fractional part
+    /*  "fpValue" (fixed point value) represents all the digits composing the actual number.
+        The position of the decimal point is implicitely given by the fbit value. */
+	int _fpValue;
+    
+    /* "fbits" (fractionnal bits) represents the number of bits allocated to the fractional part.
+        Here, we chose to make it constant with a value of 8. */
+	const static int _fbits = 8;
 };
 
 #endif

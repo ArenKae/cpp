@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:10 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 01:45:13 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/01 02:07:05 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-/* Getter for private attribute fpValue */
+/* Getter function for private attribute fpValue */
 int Fixed::getFpValue(void) const
 {
 	return this->_fpValue;

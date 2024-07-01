@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:05 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 01:42:45 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/01 02:05:59 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_H
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -28,8 +29,8 @@ public:
 	int getFpValue(void) const;
 	
 private:
-	int _fpValue;
-	const static int _fbits = 8;
+	int _fpValue;                   // Represents the integer part
+	const static int _fbits = 8;    // Represents the fractional part
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:10 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 05:12:55 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/04 15:55:21 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,9 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 	return *this;
 }
 
-/* Insertion operator overload */
+/*	Stream redirection (insertion) operator overload
+	Allows for a user-friendly way to directly print the value of a Fixed instance as a float.
+	Since the ostream class is not part of the Fixed class, we can't change the left operand  */
 std::ostream& operator<<(std::ostream &output, Fixed const &rhs)
 {
 	output << rhs.toFloat();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:02 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 05:03:34 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/04 14:40:30 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void)
     
     a = Fixed( 1234.4321f );
     
+	// Thanks to the insertion operator overload function, the value is directly printed as a float :
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;

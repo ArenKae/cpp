@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:05 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 02:49:45 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 00:36:53 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-#define FIXED_H
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 

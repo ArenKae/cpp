@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:10 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/04 15:55:21 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 00:27:16 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,10 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 
 /*	Stream redirection (insertion) operator overload
 	Allows for a user-friendly way to directly print the value of a Fixed instance as a float.
-	Since the ostream class is not part of the Fixed class, we can't change the left operand  */
+	A member function of a class expects the left operand (the object it is called on) to be of the 
+	same class type. However, in the context of streams, the left operand of "<<" is expected to be
+	an object of type std::ostream. want to keep it that way in order to use it with  std::cout
+	and chain redirect. This is why this function can not be a member of the class. */
 std::ostream& operator<<(std::ostream &output, Fixed const &rhs)
 {
 	output << rhs.toFloat();

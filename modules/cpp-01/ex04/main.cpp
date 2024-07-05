@@ -6,12 +6,12 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 04:07:03 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 05:16:53 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:26:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
-#include "utils.hpp"
+#include "replace.h"
+#include "utils.h"
 
 int	print_error(const char* filename, int flag)
 {

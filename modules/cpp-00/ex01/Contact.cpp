@@ -6,12 +6,12 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:50:47 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 06:02:28 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:37:11 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "utils.hpp"
+#include "utils.h"
 #include <iostream>
 
 Contact::Contact(void)

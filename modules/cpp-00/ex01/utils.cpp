@@ -6,11 +6,11 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:51:04 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 06:07:02 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:36:46 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.hpp"
+#include "utils.h"
 #include <iostream>
 
 void print_error(const std::string& message, int flag)

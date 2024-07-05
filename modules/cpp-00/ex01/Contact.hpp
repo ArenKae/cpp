@@ -6,12 +6,12 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:51:17 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 06:01:39 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:36:30 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-#define CONTACT_H
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iostream>
 

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 01:20:23 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 01:05:43 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:29:44 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-#define HUMANA_H
+#ifndef HUMAN_A_HPP
+#define HUMAN_A_HPP
 
 #include "Weapon.hpp"
 #include <iostream>

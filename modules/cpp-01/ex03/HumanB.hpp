@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 01:20:23 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/01 01:05:58 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:30:10 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_H
-#define HUMANB_H
+#ifndef HUMAN_B_HPP
+#define HUMAN_B_HPP
 
 #include "Weapon.hpp"
 #include <iostream>

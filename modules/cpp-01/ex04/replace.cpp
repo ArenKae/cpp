@@ -6,12 +6,12 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 04:38:07 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 04:41:01 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:26:46 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
-#include "utils.hpp"
+#include "replace.h"
+#include "utils.h"
 
 int    replace(char **av)
 {

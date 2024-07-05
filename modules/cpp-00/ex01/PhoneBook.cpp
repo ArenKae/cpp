@@ -6,13 +6,13 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:50:38 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 06:01:20 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:39:04 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
-#include "utils.hpp"
+#include "utils.h"
 #include <iostream>
 #include <sstream>
 
@@ -33,7 +33,6 @@ void    PhoneBook::ft_add(int *i)
     std::cout << "Please enter contact informations :" << RESET << std::endl;
     PhoneBook::MyContacts[*i].add_infos(i);
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "index =" << MyContacts[*i].index << std::endl;
 }
 
 int ft_stoi(std::string input, int *num)

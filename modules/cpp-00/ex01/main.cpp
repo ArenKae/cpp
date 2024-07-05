@@ -6,13 +6,13 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:50:30 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/30 06:00:10 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:37:58 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
-#include "utils.hpp"
+#include "utils.h"
 #include <iostream>
 
 int main(void)
@@ -32,7 +32,6 @@ int main(void)
         else if (!input.compare("ADD")) {
             if (i > 7)
                 i = 0;
-			std::cout << "i= " << i << std::endl;
             MyBook.ft_add(&i), i++;}
         else if (!input.compare("SEARCH"))
             MyBook.ft_search();

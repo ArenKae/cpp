@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:05 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/05 00:36:41 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/05 02:18:15 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,37 @@ public:
 	Fixed(const Fixed &src);	// Copy constructor
 	~Fixed(void);
 	
-	Fixed& operator=(const Fixed &rhs);	// Copy assignment operator overload
+	// Copy assignment operator overload
+	Fixed& operator=(const Fixed &rhs);
+	
+	// Arithmetic operators overload :
+	Fixed operator*(const Fixed &rhs) const;
+	Fixed operator-(const Fixed &rhs) const;
+	Fixed operator+(const Fixed &rhs) const;
+	Fixed operator/(const Fixed &rhs) const;
+	
+	// Comparison operators overload :
+	bool operator<(const Fixed &rhs) const;
+	bool operator>(const Fixed &rhs) const;
+	bool operator<=(const Fixed &rhs) const;
+	bool operator>=(const Fixed &rhs) const;
+	bool operator==(const Fixed &rhs) const;
+	bool operator!=(const Fixed &rhs) const;
+	
+	// Increment/decrement operators overload :
+	Fixed &operator++(void);
+	Fixed operator++(int);
+	Fixed &operator--(void);
+	Fixed operator--(int);
+	
+	/*	Min/max overloaded member functions :
+		Static methods belongs to the class rather than a particular object instance.
+		That way, they can be invoked even if no instance of the class exists. */
+	static Fixed &min(Fixed &a, Fixed &b);
+	static const Fixed &min(const Fixed &a, const Fixed &b);
+	static Fixed &max(Fixed &a, Fixed &b);
+	static const Fixed &max(const Fixed &a, const Fixed &b);
+	
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	int getFpValue(void) const;
@@ -38,7 +68,8 @@ private:
 	int _fpValue;
     
     /* "fbits" (fractionnal bits) represents the number of bits allocated to the fractional part.
-        Here, we chose to make it constant with a value of 8, but we could change it to adjust the precision of the fractional part. */
+        Here, we chose to make it constant with a value of 8, but we could change it to adjust the 
+		precision of the fractional part. */
 	const static int _fbits = 8;
 };
 

@@ -6,40 +6,40 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/07 17:41:23 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/07 19:24:30 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-class ClapTrap {
-private:
-    std::string name;
-    int hitPoints;
-    int energyPoints;
-    int attackDamage;
-
+class ClapTrap
+{
 public:
     // Constructor
-    ClapTrap(const std::string& name);
+    ClapTrap(const std::string &name);
 
     // Copy Constructor
-    ClapTrap(const ClapTrap& other);
+    ClapTrap(const ClapTrap &src);
 
     // Assignment Operator
-    ClapTrap& operator=(const ClapTrap& other);
+    ClapTrap& operator=(const ClapTrap &src);
 
     // Destructor
     ~ClapTrap();
 
     // Member functions
-    void attack(const std::string& target);
+    void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+
+private:
+    std::string _name;
+    int _hitPoints;
+    int _energyPoints;
+    int _attackDamage;
 };
 
 #endif

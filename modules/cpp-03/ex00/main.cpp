@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:22 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/07 23:13:39 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 00:17:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,8 @@ int main(void)
 	std::cout << std::endl;
 
 	// Attacking 10 times to empty energy
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
-	C3PO.attack("Jawa");
+	for (int i = 0; i < 10; i++)
+		C3PO.attack("Jawa");
 
 	// Test when no energy
 	std::cout << std::endl;

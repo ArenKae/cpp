@@ -11,7 +11,7 @@ WHITE = \033[0;97m
 
 ### VARIABLES ###
 
-NAME = ClapTrap
+NAME = ScavTrap
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJF = .cache_exists	# needed to create obj/ directory
@@ -22,7 +22,7 @@ update_flag := false
 OBJ_DIR = obj/
 
 # Source Files
-SRC_FILES = main.cpp ClapTrap.cpp
+SRC_FILES = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 # Object Files
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))

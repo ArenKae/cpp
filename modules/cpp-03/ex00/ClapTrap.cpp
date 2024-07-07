@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:41:43 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/07 19:23:11 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 00:19:37 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoints <= 0) {
-		std::cout << RED << "ClapTrap " << _name << " is already down !" << RESET << std::endl;
+		std::cout << RED << "ClapTrap " << _name << " is already down!" << RESET << std::endl;
 		return; }
     _hitPoints -= amount;
     if (_hitPoints < 0) {
@@ -76,7 +76,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	<< RED << amount <<  RESET << " points of damage!";
 	if (_hitPoints == 0) {
 		std::cout << " Current hit points: " << YELLOW << _hitPoints << std::endl;
-		std::cout << RED << "ClapTrap " << _name << " is down !" << RESET << std::endl; }
+		std::cout << RED << "ClapTrap " << _name << " is down!" << RESET << std::endl; }
 	else
 		std::cout << " Current hit points: " << GREEN << _hitPoints << RESET <<std::endl;
 }

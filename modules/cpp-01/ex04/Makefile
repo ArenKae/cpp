@@ -42,7 +42,7 @@ $(OBJ_DIR)%.o : %.cpp | $(OBJF)
 # Compiling all objets files (.o) to a file "NAME" :
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) $^ -o $@
-	@echo "$(GREEN)>>> replace compiled!$(DEF_COLOR)"
+	@echo "$(GREEN)>>> $(NAME) compiled!$(DEF_COLOR)"
 	@$(eval update_flag := true)
 
 ### MEMO ###
@@ -68,20 +68,20 @@ do_fclean:
 	@$(eval fclean_flag := true)
 
 clean :
-	@echo "$(YELLOW)Cleaning replace... $(DEF_COLOR)"
+	@echo "$(YELLOW)Cleaning $(NAME)... $(DEF_COLOR)"
 	@rm -rf $(OBJ_DIR)
 	@if [ "$(fclean_flag)" = "false" ]; then \
-		echo "$(GREEN)>>> replace object files cleaned!$(DEF_COLOR)"; \
+		echo "$(GREEN)>>> $(NAME) object files cleaned!$(DEF_COLOR)"; \
 fi
 	@if [ "$(fclean_flag)" = "true" ]; then \
-		echo "$(GREEN)>>> replace object files & executables cleaned!$(DEF_COLOR)"; \
+		echo "$(GREEN)>>> $(NAME) object files & executables cleaned!$(DEF_COLOR)"; \
 fi
 
 fclean : do_fclean clean
 	@rm -f $(NAME)
 
 re :	fclean all
-	@echo "$(CYAN)Cleaned and rebuilt everything for replace!$(DEF_COLOR)"
+	@echo "$(CYAN)Cleaned and rebuilt everything for $(NAME)!$(DEF_COLOR)"
 
 # Phony targets are used to differenciate makefile rules from system files.
 .PHONY: all clean fclean re nothing_to_be_done do_fclean

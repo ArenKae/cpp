@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:10 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/07 18:39:09 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 15:03:13 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,31 +170,31 @@ bool	Fixed::operator!=(const Fixed &rhs) const
 Fixed	&Fixed::operator++(void)
 {
 	this->_fpValue++;
-    return (*this);
+	return (*this);
 }
 
 /*	Post-increment operaotr overload :
 	The value is returned unchanged for use in an expression, and then incremented. */
 Fixed   Fixed::operator++(int)
 {
-    Fixed temp = *this;
+	Fixed temp = *this;
 	this->_fpValue++;
-    return (temp);
+	return (temp);
 }
 
 //	Pre-decrement operator overload :
 Fixed	&Fixed::operator--(void)
 {
 	this->_fpValue--;
-    return (*this);
+	return (*this);
 }
 
 //	Post-decrement operaotr overload :
 Fixed   Fixed::operator--(int)
 {
-    Fixed temp = *this;
+	Fixed temp = *this;
 	this->_fpValue--;
-    return (temp);
+	return (temp);
 }
 
 //	Min/max overloaded member functions :

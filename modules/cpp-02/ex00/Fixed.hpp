@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:05 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/05 00:36:53 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 15:01:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ public:
 	int getFpValue(void) const;
 	
 private:
-    /*  "fpValue" (fixed point value) represents all the digits composing the actual number.
-        The position of the decimal point is implicitely given by the fbit value. */
+	/*  "fpValue" (fixed point value) represents all the digits composing the actual number.
+		The position of the decimal point is implicitely given by the fbit value. */
 	int _fpValue;
-    
-    /* "fbits" (fractionnal bits) represents the number of bits allocated to the fractional part.
-        Here, we chose to make it constant with a value of 8. */
+	
+	/* "fbits" (fractionnal bits) represents the number of bits allocated to the fractional part.
+		Here, we chose to make it constant with a value of 8. */
 	const static int _fbits = 8;
 };
 

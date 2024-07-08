@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:02 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/05 02:24:30 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 15:03:30 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ int main(void)
 	std::cout << GREEN << "1 = TRUE" << RED << "  0 = FALSE" << RESET << std::endl;
 	std::cout << "a(" << a << ") est plus grand que b(" << b << ") : " << RED << (a > b) << RESET << std::endl;
 	std::cout << "c(" << c << ") est plus petit que d(" << d << ") : " << GREEN << (c < d) << RESET << std::endl;
-    return 0;
+	return 0;
 }

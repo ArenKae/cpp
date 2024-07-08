@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 23:08:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/26 00:00:51 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 13:27:33 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ void Zombie::announce(void)
 
 void Zombie::setIndex(int i)
 {
-    this->index = i;
+	this->index = i;
 }
 
 void Zombie::setName(std::string name)
 {
-    this->name = name;
+	this->name = name;
 }

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/07 19:24:30 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 04:01:43 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,33 @@
 
 class ClapTrap
 {
-public:
-    // Constructor
-    ClapTrap(const std::string &name);
+	public:
+		// Constructor
+		ClapTrap(const std::string &name);
 
-    // Copy Constructor
-    ClapTrap(const ClapTrap &src);
+		// Copy Constructor
+		ClapTrap(const ClapTrap &src);
 
-    // Assignment Operator
-    ClapTrap& operator=(const ClapTrap &src);
+		// Destructor
+		~ClapTrap();
 
-    // Destructor
-    ~ClapTrap();
+		// Assignment Operator
+		ClapTrap& operator=(const ClapTrap &src);
 
-    // Member functions
-    void attack(const std::string &target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
+		// Member functions
+		void attack(const std::string &target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		
+		// Wrapper function overloads to check for invalid inputs
+		void takeDamage(int amount);
+		void beRepaired(int amount);
 
-private:
-    std::string _name;
-    int _hitPoints;
-    int _energyPoints;
-    int _attackDamage;
+	private:
+		std::string _name;
+		int _hitPoints;
+		int _energyPoints;
+		int _attackDamage;
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 21:56:14 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/05 02:35:24 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 13:47:55 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Harl
 public:
 	Harl(void);
 	~Harl(void);
-    void complain(std::string level);
+	void complain(std::string level);
 private:
 	void debug(void);
 	void info(void);

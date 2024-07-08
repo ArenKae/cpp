@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 21:52:45 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 05:52:30 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 13:50:01 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,24 +71,24 @@ void Harl::complain(std::string level)
 	
 	// The value of index is evaluated and compared with different cases
 	switch (index)
-    	{
-        	case 0:
+		{
+			case 0:
 				for (int i = 0; i < 4; i++)
-            		(this->*functionsPTR[i])();
+					(this->*functionsPTR[i])();
 				break;
-        	case 1:
+			case 1:
 				for (int i = 1; i < 4; i++)
-            		(this->*functionsPTR[i])();
+					(this->*functionsPTR[i])();
 				break;
-        	case 2:
+			case 2:
 				for (int i = 2; i < 4; i++)
-            		(this->*functionsPTR[i])();
+					(this->*functionsPTR[i])();
 				break;
-        	case 3:
-            	(this->*functionsPTR[3])();
-            	break;
-        	default:
-            	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            	break;
-    }
+			case 3:
+				(this->*functionsPTR[3])();
+				break;
+			default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+				break;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 04:07:03 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/05 02:26:50 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 04:56:22 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	print_error(const char* filename, int flag)
 		<< "> " << "<" << BLUE << "replacement_string" << RESET << ">" << std::endl;}
 	else if (flag == TOO_FEW_ARGS) {
 		std::cerr << RED << "Error: too few arguments" << RESET << std::endl;
-		std::cout << YELLOW << "Usage: " RESET << "./replace " << "<" << BLUE 
-		<< "filename" << RESET << "> " << "<" BLUE << "string_to_match" << RESET 
-		<< "> " << "<" << BLUE << "replacement_string" << RESET << ">" << std::endl;}
+		std::cout << YELLOW << "Usage: " RESET << "./replace <" << BLUE 
+		<< "filename" << RESET << "> <" BLUE << "string_to_match" << RESET 
+		<< "> <" << BLUE << "replacement_string" << RESET << ">" << std::endl;}
 	return (EXIT_FAILURE);
 }
 

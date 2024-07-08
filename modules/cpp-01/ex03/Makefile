@@ -11,7 +11,7 @@ WHITE = \033[0;97m
 
 ### VARIABLES ###
 
-NAME = ultra_violence
+NAME = ultraViolence
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJF = .cache_exists	# needed to create obj/ directory

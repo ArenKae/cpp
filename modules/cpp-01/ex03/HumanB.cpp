@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 01:28:28 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/26 04:01:03 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 13:17:34 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ HumanB::~HumanB()
 void HumanB::attack()
 {
 	if (this->_weapon == NULL)
-		std::cout << this->_name << " has no fucking weapon! " << std::endl;
+		std::cout << this->_name << " has no weapon! " << std::endl;
 	else
 		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }

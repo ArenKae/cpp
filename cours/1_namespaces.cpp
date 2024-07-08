@@ -38,7 +38,7 @@ int main(void)
     printf("global = %d\n", global);
     printf("ft() = %d\n\n", ft());
 
-    //  L'opérateur de resotution de portée :: (scope resoution operator)
+    //  L'opérateur de résolution de portée :: (scope resolution operator)
     //  permet d'accéder à un élément stocké dans un namespace.
 
     printf("Foo::global = %d\n", Foo::global);

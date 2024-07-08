@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:10:56 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/27 04:09:28 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 13:00:54 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie(std::string str) : name(str)
 {
-	//std::cout << this->name << " constructor called." << std::endl;
+	std::cout << this->name << " constructor called." << std::endl;
 }
 
 Zombie::~Zombie(void)

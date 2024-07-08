@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 01:28:28 by acosi             #+#    #+#             */
-/*   Updated: 2024/06/26 03:36:59 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 13:26:38 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ Weapon::~Weapon()
 
 const std::string& Weapon::getType()
 {
-    return this->type;
+	return this->type;
 }
 
 void Weapon::setType(std::string NewType)
 {
-    this->type = NewType;    
+	this->type = NewType;    
 }

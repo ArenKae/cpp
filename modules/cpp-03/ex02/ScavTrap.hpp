@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:11:09 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:25:12 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 03:29:03 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
+#include <iostream>
+
 
 class ScavTrap : public ClapTrap // Inheritance from ClapTrap
 {

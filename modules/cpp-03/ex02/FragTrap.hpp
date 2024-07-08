@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/07 17:40:22 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:30:47 by acosi            ###   ########.fr       */
+/*   Created: 2024/07/08 00:11:09 by acosi             #+#    #+#             */
+/*   Updated: 2024/07/08 04:25:04 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int main(void)
+class FragTrap : public ClapTrap // Inheritance from ClapTrap
 {
-	ClapTrap C3PO("C3-PO");
-	ScavTrap R2D2("R2-D2");
-	std::cout << std::endl;
+	public:
+		// Constructor
+		FragTrap(const std::string &name);
 
-	// ClapTrap tests
-	C3PO.attack("Jawa");
-	C3PO.takeDamage(5);
-	C3PO.beRepaired(1);
-	C3PO.takeDamage(6);
-	std::cout << std::endl;
+		// Copy Constructor
+		FragTrap(const FragTrap &src);
 
-	// ScavTrap tests
-	R2D2.attack("Stormtrooper");
-	R2D2.takeDamage(42);
-	R2D2.beRepaired(20);
-	R2D2.guardGate();
-	std::cout << std::endl;
+		// Destructor
+		~FragTrap();
 
-	return 0;
-}
+		// Assignment Operator
+		FragTrap& operator=(const FragTrap &src);
+
+		// Special member function
+		void highFivesGuys(void);
+};
+
+#endif

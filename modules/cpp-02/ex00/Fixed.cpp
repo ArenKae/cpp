@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:10 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 15:01:55 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 15:14:16 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,16 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-/* Getter function for private attribute fpValue */
-int Fixed::getFpValue(void) const
-{
-	return this->_fpValue;
-}
-
 /* Copy assignement operator overload */
 Fixed& Fixed::operator=(const Fixed &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
-		this->_fpValue = rhs.getFpValue();
+		this->_fpValue = rhs.getRawBits();
 	return *this;
 }
 
+/* Getter function for private attribute fpValue */
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;

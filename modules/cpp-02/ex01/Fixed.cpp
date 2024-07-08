@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:10 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 15:02:46 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 16:12:22 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,17 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-/* Getter function for private attribute fpValue */
-int Fixed::getFpValue(void) const
-{
-	return this->_fpValue;
-}
 
+/* Getter function for private attribute fpValue */
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return this->_fpValue;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	//std::cout << "setRawBits member function called" << std::endl;
 	this->_fpValue = raw;
 }
 
@@ -91,7 +87,7 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
-		this->_fpValue = rhs.getFpValue();
+		this->_fpValue = rhs.getRawBits();
 	return *this;
 }
 

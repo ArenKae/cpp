@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:12:05 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 15:02:53 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/08 16:12:26 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ public:
 	Fixed& operator=(const Fixed &rhs);	// Copy assignment operator overload
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
-	int getFpValue(void) const;
 	float toFloat(void) const;
 	int toInt(void) const;
 	

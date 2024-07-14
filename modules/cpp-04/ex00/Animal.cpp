@@ -6,14 +6,21 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:09:17 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 08:40:01 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/14 19:26:24 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "utils.h"
 
 // Default constructor
-Animal::Animal(void)
+Animal::Animal(void) : _type("Undefined animal")
+{
+	std::cout << "Animal constructor called." << std::endl;
+}
+
+// Type initialization constructor
+Animal::Animal(std::string type) : _type(type)
 {
 	std::cout << "Animal constructor called." << std::endl;
 }
@@ -29,7 +36,7 @@ Animal::Animal(const Animal &src)
 Animal& Animal::operator=(const Animal& src)
 {
 	if (this != &src) {
-		type = src.type; }
+		_type = src._type; }
 	return *this;
 }
 
@@ -37,4 +44,19 @@ Animal& Animal::operator=(const Animal& src)
 Animal::~Animal()
 {
 	std::cout << "Animal destructor called." << std::endl;
+}
+
+/* ****************	*/
+/* MEMBER FUNCTIONS	*/
+/* ****************	*/
+
+// Getter function for _type attribute
+std::string Animal::getType(void) const
+{
+	return this->_type;
+}
+
+void Animal::makeSound(void) const
+{
+	std::cout << YELLOW << "*Unkown animal sounds*" << RESET << std::endl;
 }

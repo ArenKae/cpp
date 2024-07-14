@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:52:33 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 19:25:26 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 00:31:47 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ Dog::~Dog()
 // Member function
 void Dog::makeSound(void) const
 {
-	std::cout << BLUE << "Woof" << RESET << std::endl;
+	std::cout << BLUE "Woof" RESET << std::endl;
 }

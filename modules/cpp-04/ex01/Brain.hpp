@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 08:52:37 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 00:03:00 by acosi            ###   ########.fr       */
+/*   Created: 2024/07/14 23:50:00 by acosi             #+#    #+#             */
+/*   Updated: 2024/07/15 00:25:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
 
-class Dog : public Animal
+class Brain
 {
 	private:
-		Brain* brain;
+		std::string _ideas[100];
 	public:
-		Dog(void);
-		Dog(const Dog &src);
-		~Dog(void);
-		Dog& operator=(const Dog &src);
+		//	Default Constructor
+		Brain(void);
+		
+		//	Copy Constructor
+		Brain(const Brain &src);
 
-		virtual void makeSound(void) const;
+		//	Destructor
+		~Brain(void);
+		
+		//	Assignment operator
+		Brain& operator=(const Brain &src);
 };
 
 #endif

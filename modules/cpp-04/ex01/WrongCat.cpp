@@ -6,11 +6,12 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:45:36 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 19:22:14 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 00:31:01 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
+#include "utils.h"
 
 // Default constructor
 WrongCat::WrongCat(void) : WrongAnimal("Wrong cat")
@@ -42,5 +43,5 @@ WrongCat::~WrongCat()
 // Member function
 void WrongCat::makeSound(void) const
 {
-	std::cout << "Meow! Feed me or I'll murder your entire family (•ㅅ•)" << std::endl;
+	std::cout << RED "Meow! Feed me or I'll murder your entire family (•ㅅ•)" RESET << std::endl;
 }

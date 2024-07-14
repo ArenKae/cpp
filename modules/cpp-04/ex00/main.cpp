@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:07:50 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 19:35:02 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/14 23:43:39 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int main(void) {
         std::cout << MAGENTA << ">>> ADDITIONAL TESTS <<<" << RESET << std::endl;
         const WrongAnimal* metaWrong = new WrongAnimal();
         const WrongAnimal* k = new WrongCat();
-		std::cout << "\n";
+		std::cout << std::endl;
         
 		std::cout << metaWrong->getType() << std::endl;
         std::cout << k->getType() << std::endl;
         k->makeSound();				// Will output the wrong animal sound, not the cat sound,
         metaWrong->makeSound();		// because the function is not virtual
-		std::cout << "\n";
+		std::cout << std::endl;
 
         delete metaWrong;
         delete k;

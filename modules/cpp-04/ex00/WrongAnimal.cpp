@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:45:29 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 19:24:01 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 00:31:30 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ std::string WrongAnimal::getType(void) const
 
 void WrongAnimal::makeSound(void) const
 {
-	std::cout << RED << "*Totally not wrong animal sounds*" << RESET << std::endl;
+	std::cout << RED "*Totally not wrong animal sounds*" RESET << std::endl;
 }

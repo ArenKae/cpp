@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:09:17 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 19:26:24 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 00:32:12 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ std::string Animal::getType(void) const
 
 void Animal::makeSound(void) const
 {
-	std::cout << YELLOW << "*Unkown animal sounds*" << RESET << std::endl;
+	std::cout << YELLOW "*Unkown animal sounds*" RESET << std::endl;
 }

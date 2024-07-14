@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:52:24 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 19:26:00 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 00:31:56 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ Cat::~Cat()
 // Member function
 void Cat::makeSound(void) const
 {
-	std::cout << GREEN << "Meow" << RESET << std::endl;
+	std::cout << GREEN "Meow" RESET << std::endl;
 }

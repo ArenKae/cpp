@@ -27,7 +27,6 @@ class WrongAnimal
 		~WrongAnimal(void);
 		WrongAnimal& operator=(const WrongAnimal &src);
 
-		//	Member functions :
 		void makeSound(void) const;
 		std::string getType(void) const;
 };

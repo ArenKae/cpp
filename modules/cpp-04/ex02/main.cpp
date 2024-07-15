@@ -6,16 +6,17 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:07:50 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 02:20:11 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 02:30:15 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "utils.h"
 
 int main(void) {
+	//Animal test;
 	{
 		std::cout << MAGENTA << ">>> SUBJECT TESTS <<<" << RESET << std::endl;
 		const Animal* j = new Dog();

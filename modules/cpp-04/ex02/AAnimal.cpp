@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:09:17 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 02:25:25 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 02:34:14 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,3 @@ Animal::~Animal()
 {
 	std::cout << "Animal destructor called." << std::endl;
 }
-
-/* ****************	*/
-/* MEMBER FUNCTIONS	*/
-/* ****************	*/
-
-// Getter function for _type attribute
-// std::string Animal::getType(void) const
-// {
-// 	return this->_type;
-// }
-
-// void Animal::makeSound(void) const
-// {
-// 	std::cout << YELLOW "*Unkown animal sounds*" RESET << std::endl;
-// }

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 23:50:00 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 00:25:50 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 01:13:55 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ class Brain
 		
 		//	Assignment operator
 		Brain& operator=(const Brain &src);
+
+		// Member functions :
+		void changeIdea(int index, std::string idea);
+		std::string printIdea(int index) const;
 };
 
 #endif

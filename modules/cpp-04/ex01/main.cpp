@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:07:50 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 00:14:39 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 02:16:35 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,30 @@ int main(void) {
 		std::cout << std::endl;
 	}
 	{
-		std::cout << MAGENTA << ">>> TESTING DEEP COPIES <<<" << RESET << std::endl;
-		Dog originalDog;
-		Dog copyDog(originalDog);
-		originalDog.makeSound();
-		copyDog.makeSound();
-		
+		std::cout << MAGENTA << ">>> TESTING DEEP COPIES (CAT) <<<" << RESET << std::endl;
+		// Creating a cat and its copy
 		Cat originalCat;
 		Cat copyCat(originalCat);
-		originalCat.makeSound();
-		copyCat.makeSound();
+		// Checking what they think
+		std::cout << "OriginalCat: " << RED << originalCat.getIdea(0) << RESET << std::endl;
+		std::cout << "CopyCat: " << CYAN << copyCat.getIdea(0) << RESET << std::endl;
+		// Changing OriginalCat's idea and checking that it doesn't affect the deep copy
+		originalCat.newIdea(0, "I need to break something ฅ^._.^ฅ");
+		std::cout << "OriginalCat: " << RED << originalCat.getIdea(0) << RESET << std::endl;
+		std::cout << "CopyCat: " << CYAN << copyCat.getIdea(0) << RESET << std::endl;
 	}
+	/*{
+		std::cout << MAGENTA << "\n>>> TESTING DEEP COPIES (DOG) <<<" << RESET << std::endl;
+		// Creating a dog and its copy
+		Dog originalDog;
+		Dog copyDog(originalDog);
+		// Checking what they think
+		std::cout << "OriginalDog: " << GREEN << originalDog.getIdea(0) << RESET << std::endl;
+		std::cout << "CopyDog: " << CYAN << copyDog.getIdea(0) << RESET << std::endl;
+		// Changing OriginalCat's idea and checking that it doesn't affect the deep copy
+		originalDog.newIdea(0, "I'm a good boy (❍ᴥ❍ʋ)");
+		std::cout << "OriginalDog: " << GREEN << originalDog.getIdea(0) << RESET << std::endl;
+		std::cout << "CopyDog: " << CYAN << copyDog.getIdea(0) << RESET << std::endl;
+	}*/
 	return 0;
 }

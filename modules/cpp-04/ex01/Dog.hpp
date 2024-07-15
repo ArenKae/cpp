@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:52:37 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 00:03:00 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 02:01:54 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Dog : public Animal
 {
 	private:
-		Brain* brain;
+		Brain* _brain;
 	public:
 		Dog(void);
 		Dog(const Dog &src);
@@ -27,6 +27,8 @@ class Dog : public Animal
 		Dog& operator=(const Dog &src);
 
 		virtual void makeSound(void) const;
+		void newIdea(int index, std::string idea);
+		std::string getIdea(int index) const;
 };
 
 #endif

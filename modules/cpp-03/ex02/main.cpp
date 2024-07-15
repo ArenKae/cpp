@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:22 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 08:51:32 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 13:03:10 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "utils.h"
 
 int main(void)
 {
@@ -22,6 +23,7 @@ int main(void)
 	std::cout << std::endl;
 
 	// ClapTrap tests
+    std::cout << MAGENTA ">>> CLAPTRAP <<<" RESET << std::endl;
 	C3PO.attack("Jawa");
 	C3PO.takeDamage(5);
 	C3PO.beRepaired(1);
@@ -29,6 +31,7 @@ int main(void)
 	std::cout << std::endl;
 
 	// ScavTrap tests
+    std::cout << MAGENTA ">>> SCAVTRAP <<<" RESET << std::endl;
 	R2D2.getEnergy();
 	R2D2.attack("Stormtrooper");
 	R2D2.takeDamage(42);
@@ -38,6 +41,7 @@ int main(void)
 	std::cout << std::endl;
 
 	// FragTrap tests
+    std::cout << MAGENTA ">>> FRAGTRAP <<<" RESET << std::endl;
 	BB8.getEnergy();
 	BB8.attack("Bantha");
 	BB8.takeDamage(10);

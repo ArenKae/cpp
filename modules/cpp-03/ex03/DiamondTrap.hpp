@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 06:48:40 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 09:17:17 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 10:28:56 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class DiamondTrap :  public FragTrap, public ScavTrap // Inherits from both clas
 		DiamondTrap& operator=(const DiamondTrap &src);
 
 		// Member function
-		void attack(const std::string &target); // Overridden attack method
+		using ScavTrap::attack;
 		void whoAmI();
 
 	protected:

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:11:31 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 09:11:48 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 10:22:29 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ FragTrap::FragTrap(void) : ClapTrap()
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
     std::cout << "FragTrap constructor called for " << BLUE << _name <<  RESET << std::endl;
-	_hitPoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 // Copy Constructor
@@ -40,8 +40,12 @@ FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 // Assignment Operator
 FragTrap& FragTrap::operator=(const FragTrap& src)
 {
-    if (this != &src)
-		ClapTrap::operator=(src);
+    if (this != &src) {
+        this->_name = src._name;
+        this->_hitPoints = src._hitPoints;
+        this->_energyPoints = src._energyPoints;
+        this->_attackDamage = src._attackDamage;
+    }
     return *this;
 }
 

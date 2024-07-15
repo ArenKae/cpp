@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:22 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 09:46:25 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 10:00:51 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int main(void)
 	HK47.takeDamage(10);
 	HK47.beRepaired(6);
 	HK47.getEnergy();
+	HK47.guardGate();
+	HK47.highFivesGuys();
 	HK47.whoAmI();
 	std::cout << std::endl;
 

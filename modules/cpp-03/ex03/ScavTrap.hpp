@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:11:09 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 09:12:46 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 10:30:48 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
+
+#define ScavTrap_HP 100
+#define ScavTrap_EP 50
+#define ScavTrap_AD 20
 
 /*	Virtual inheritance is used to solve the "diamond problem".
 	If class A has two derived classes B and C, and D is dervied from both B and C,

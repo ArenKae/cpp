@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 09:09:34 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 10:02:08 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class ClapTrap
 		A virtual member function can be overriden by functions of the same name
 		to achieve runtime polymorphism. This ensures that the correct function
 		implementation is called based on the actual type of the object. */
-		virtual void attack(const std::string &target);
+		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		void getEnergy(void);

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 08:53:54 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 09:09:34 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,27 @@ class ClapTrap
 		// Copy Constructor
 		ClapTrap(const ClapTrap &src);
 
-		// Destructor
-		~ClapTrap();
-
 		// Assignment Operator
 		ClapTrap& operator=(const ClapTrap &src);
 
-		// Member functions
-		void attack(const std::string &target);
+		/*	Destructor
+		A virtual destructor ensures proper cleanup of derived class objects
+		when they are deleted through a pointer of the base class. Otherwise,
+		only the derived class destructor is called and this might cause
+		undefined behavior and ressource leaks. Virtual makes sure that every
+		destructors from the top are called. */
+		virtual ~ClapTrap();
+
+		/*	Member functions
+		A virtual member function can be overriden by functions of the same name
+		to achieve runtime polymorphism. This ensures that the correct function
+		implementation is called based on the actual type of the object. */
+		virtual void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		void getEnergy(void);
 
-		// Wrapper functions overloads to check for invalid inputs
+		// Wrapper function overloads to check for invalid inputs
 		void takeDamage(int amount);
 		void beRepaired(int amount);
 

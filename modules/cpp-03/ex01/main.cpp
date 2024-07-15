@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:22 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:30:47 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 08:09:34 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ int main(void)
 	R2D2.takeDamage(42);
 	R2D2.beRepaired(20);
 	R2D2.guardGate();
+	std::cout << std::endl;
+
+	ScavTrap R4D4 = R2D2;
+	R4D4.attack("Stormtrooper");
+	R4D4.takeDamage(42);
+	R4D4.beRepaired(20);
+	R4D4.guardGate();
 	std::cout << std::endl;
 
 	return 0;

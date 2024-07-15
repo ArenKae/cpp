@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:05:21 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 09:09:23 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ClapTrap
 {
 	public:
-		// Constructor
+		// Name Constructor
 		ClapTrap(const std::string &name);
 
 		// Copy Constructor
@@ -34,16 +34,20 @@ class ClapTrap
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		void getEnergy(void);
 
-		// Wrapper function overloads to check for invalid inputs
+		// Wrapper functions overloads to check for invalid inputs
 		void takeDamage(int amount);
 		void beRepaired(int amount);
 
-	protected: // Protected attributes are now visible only from an instance or a child of the class
+	protected:
 		std::string _name;
 		int _hitPoints;
 		int _energyPoints;
 		int _attackDamage;
+
+		// Default constructor to meet canonical orthodox form requirements
+		ClapTrap(void);	
 };
 
 #endif

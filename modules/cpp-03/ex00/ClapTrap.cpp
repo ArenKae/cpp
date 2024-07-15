@@ -6,30 +6,38 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:41:43 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:04:34 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 07:52:00 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "utils.h"
 
-// Constructor
-ClapTrap::ClapTrap(const std::string &name)
-	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+// Default constructor
+ClapTrap::ClapTrap(void)
+	: _name("Default name"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap constructor called for " << BLUE << _name <<  RESET << std::endl;
+	std::cout << "ClapTrap default constructor called for " BLUE << _name <<  RESET << std::endl;
+}
+
+// Name Constructor
+ClapTrap::ClapTrap(const std::string &name)
+    : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{
+    std::cout << "ClapTrap constructor called for " BLUE << _name <<  RESET << std::endl;
 }
 
 // Copy Constructor
 ClapTrap::ClapTrap(const ClapTrap &src)
-	: _name(src._name), _hitPoints(src._hitPoints), _energyPoints(src._energyPoints), _attackDamage(src._attackDamage)
 {
-	std::cout << "ClapTrap copy constructor called for " << BLUE << _name <<  RESET << std::endl;
+	*this = src;
+    std::cout << "ClapTrap copy constructor called for " BLUE << _name <<  RESET << std::endl;
 }
 
 // Assignment Operator
 ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 {
+	std::cout << "ClapTrap assignment operator called for " BLUE << src._name <<  RESET << std::endl;
 	if (this != &src) {
 		_name = src._name;
 		_hitPoints = src._hitPoints;

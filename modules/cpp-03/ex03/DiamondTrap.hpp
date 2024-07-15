@@ -1,53 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/07 17:40:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 08:53:54 by acosi            ###   ########.fr       */
+/*   Created: 2024/07/15 06:48:40 by acosi             #+#    #+#             */
+/*   Updated: 2024/07/15 09:17:17 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ClapTrap
+class DiamondTrap :  public FragTrap, public ScavTrap // Inherits from both classes
 {
+	private:
+		std::string _name;
+
 	public:
 		// Name Constructor
-		ClapTrap(const std::string &name);
+		DiamondTrap(const std::string &name);
 
 		// Copy Constructor
-		ClapTrap(const ClapTrap &src);
+		DiamondTrap(const DiamondTrap &src);
 
 		// Destructor
-		~ClapTrap();
+		~DiamondTrap(void);
 
 		// Assignment Operator
-		ClapTrap& operator=(const ClapTrap &src);
+		DiamondTrap& operator=(const DiamondTrap &src);
 
-		// Member functions
-		void attack(const std::string &target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		void getEnergy(void);
-
-		// Wrapper functions overloads to check for invalid inputs
-		void takeDamage(int amount);
-		void beRepaired(int amount);
+		// Member function
+		void attack(const std::string &target); // Overridden attack method
+		void whoAmI();
 
 	protected:
-		std::string _name;
-		int _hitPoints;
-		int _energyPoints;
-		int _attackDamage;
-
 		// Default constructor to meet canonical orthodox form requirements
-		ClapTrap(void);	
+		DiamondTrap(void);	
 };
 
 #endif

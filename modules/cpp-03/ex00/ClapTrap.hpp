@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:51 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:01:43 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 07:41:54 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ClapTrap
 {
 	public:
-		// Constructor
+		// Name Constructor
 		ClapTrap(const std::string &name);
 
 		// Copy Constructor
@@ -44,6 +44,10 @@ class ClapTrap
 		int _hitPoints;
 		int _energyPoints;
 		int _attackDamage;
+		
+		// Default constructor to meet canonical orthodox form requirements
+		ClapTrap(void);	
+
 };
 
 #endif

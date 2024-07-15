@@ -6,48 +6,47 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:22 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 07:49:59 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 09:46:25 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+#include "utils.h"
 
 int main(void)
 {
-{
-	ClapTrap R2D2("R2-D2");
-	ClapTrap C3PO("C3-PO");
+	ScavTrap C3PO("C3-PO");
+	FragTrap R2D2("R2D2");
+	DiamondTrap HK47("HK-47");
 	std::cout << std::endl;
 
-	// Basic tests
-	R2D2.attack("Jawa");
-	R2D2.takeDamage(5);
-	R2D2.beRepaired(1);
-	R2D2.takeDamage(6);
+	std::cout << MAGENTA ">>> SCAVTRAP <<<" RESET << std::endl;
+	C3PO.getEnergy();
+	C3PO.attack("Stormtrooper");
+	C3PO.takeDamage(42);
+	C3PO.beRepaired(20);
+	C3PO.getEnergy();
+	C3PO.guardGate();
 	std::cout << std::endl;
 
-	// Attacking 10 times to empty energy
-	for (int i = 0; i < 10; i++)
-		C3PO.attack("Jawa");
+	std::cout << MAGENTA ">>> FRAGTRAP <<<" RESET << std::endl;
+	R2D2.attack("Bantha");
+	R2D2.takeDamage(10);
+	R2D2.beRepaired(6);
+	R2D2.highFivesGuys();
+	std::cout << std::endl;
 
-	// Test when no energy
+	std::cout << MAGENTA ">>> DIAMONDTRAP <<<" RESET << std::endl;
+	HK47.getEnergy();
+	HK47.attack("Meatbag");
+	HK47.takeDamage(10);
+	HK47.beRepaired(6);
+	HK47.getEnergy();
+	HK47.whoAmI();
 	std::cout << std::endl;
-	C3PO.beRepaired(1);
-	C3PO.attack("Jawa");
 
-	// Test when no hp
-	std::cout << std::endl;
-	R2D2.beRepaired(1);
-	R2D2.attack("Jawa");
-	R2D2.takeDamage(1);
-	std::cout << std::endl;
-	
-	// Test on a copy of ClapTrap
-	ClapTrap R4D4 = R2D2;
-	R4D4.beRepaired(1);
-	R4D4.attack("Jawa");
-	R4D4.takeDamage(1);
-	std::cout << std::endl;
-}
 	return 0;
 }

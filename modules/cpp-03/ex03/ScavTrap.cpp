@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:11:31 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 08:37:11 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 09:45:20 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 // Name Constructor
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
-    std::cout << "ScavTrap constructor called for " BLUE << _name <<  RESET << std::endl;
+    std::cout << "ScavTrap constructor called for " << BLUE << _name <<  RESET << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -55,20 +55,20 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 // Destructor
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap destructor called for " << BLUE << _name <<  RESET << std::endl;
+    std::cout << "ScavTrap destructor called for " BLUE << _name <<  RESET << std::endl;
 }
 
 /* ****************	*/
 /* MEMBER FUNCTIONS	*/
 /* ****************	*/
 
-// Overridden attack method
+// Overridden attack function
 void ScavTrap::attack(const std::string& target)
 {
     if (_energyPoints > 0 && _hitPoints > 0) {
         std::cout << BLUE << _name <<  RESET << " attacks " << RED 
 		<< target <<  RESET << ", causing " << YELLOW << _attackDamage << RESET 
-		<< " points of damage! Master Ani would be proud!" << std::endl;
+		<< " points of damage! The Maker would be proud!" << std::endl;
         _energyPoints -= 1; }
 	else if (_energyPoints <= 0)
         std::cout << BLUE << _name << RESET << " can't attack : not enough energy." << std::endl;

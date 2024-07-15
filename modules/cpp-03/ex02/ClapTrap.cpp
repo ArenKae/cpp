@@ -6,25 +6,32 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:41:43 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:14:02 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 08:50:02 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "utils.h"
 
-// Constructor
+// Default constructor
+ClapTrap::ClapTrap(void)
+	: _name("Default name"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{
+	std::cout << "ClapTrap default constructor called for " BLUE << _name <<  RESET << std::endl;
+}
+
+// Name Constructor
 ClapTrap::ClapTrap(const std::string &name)
     : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "ClapTrap constructor called for " << BLUE << _name <<  RESET << std::endl;
+    std::cout << "ClapTrap constructor called for " BLUE << _name <<  RESET << std::endl;
 }
 
 // Copy Constructor
 ClapTrap::ClapTrap(const ClapTrap &src)
-    : _name(src._name), _hitPoints(src._hitPoints), _energyPoints(src._energyPoints), _attackDamage(src._attackDamage)
 {
-    std::cout << "ClapTrap copy constructor called for " << BLUE << _name <<  RESET << std::endl;
+	*this = src;
+    std::cout << "ClapTrap copy constructor called for " BLUE << _name <<  RESET << std::endl;
 }
 
 // Assignment Operator
@@ -118,4 +125,14 @@ void ClapTrap::beRepaired(int amount)
 
 	// The static_cast operator is used to perform an explicit and type-safe conversion
 	beRepaired(static_cast<unsigned int>(amount));
+}
+
+// Getter function to check the energy points.
+void ClapTrap::getEnergy(void)
+{
+	if (_energyPoints > 0) {
+		std::cout << BLUE << _name << RESET << " has " GREEN << _energyPoints 
+		<< RESET << " energy points left." << std::endl; }
+	else if (_energyPoints <= 0) {
+		std::cout << BLUE << _name << RESET << " has no energy points left." << std::endl; }
 }

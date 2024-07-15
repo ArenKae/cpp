@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:40:22 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:30:36 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 08:51:32 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,20 @@ int main(void)
 	std::cout << std::endl;
 
 	// ScavTrap tests
+	R2D2.getEnergy();
 	R2D2.attack("Stormtrooper");
 	R2D2.takeDamage(42);
 	R2D2.beRepaired(20);
+	R2D2.getEnergy();
 	R2D2.guardGate();
 	std::cout << std::endl;
 
 	// FragTrap tests
+	BB8.getEnergy();
 	BB8.attack("Bantha");
 	BB8.takeDamage(10);
 	BB8.beRepaired(6);
+	BB8.getEnergy();
 	BB8.highFivesGuys();
 	std::cout << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:09:14 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/14 19:20:27 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 06:30:40 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ class Animal
 		
 		//	Copy constructor
 		Animal(const Animal &src);
-
-		/*	Destructor
-			The virtual keyword ensures proper cleanup of derived class objects
-			when they are deleted through a pointer of the base class. Otherwise,
-			only the derived class destructor is called and this might cause
-			undefined behavior and ressource leaks. Virtual makes sure that every
-			destructors from the top are called. */
-		virtual ~Animal(void);
 		
 		//	Assignment operator
 		Animal& operator=(const Animal &src);
+
+		/*	Destructor
+		A virtual destructor ensures proper cleanup of derived class objects
+		when they are deleted through a pointer of the base class. Otherwise,
+		only the derived class destructor is called and this might cause
+		undefined behavior and ressource leaks. Virtual makes sure that every
+		destructors from the top are called. */
+		virtual ~Animal(void);
 
 		//	Member functions :
 		virtual void makeSound(void) const;

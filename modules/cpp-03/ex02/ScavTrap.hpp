@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:11:09 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 03:29:03 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 08:35:42 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 #define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include <iostream>
-
 
 class ScavTrap : public ClapTrap // Inheritance from ClapTrap
 {
 	public:
-		// Constructor
+		// Name Constructor
 		ScavTrap(const std::string &name);
 
 		// Copy Constructor
@@ -35,6 +33,13 @@ class ScavTrap : public ClapTrap // Inheritance from ClapTrap
 		// Member functions
 		void attack(const std::string &target); // Overridden attack method
 		void guardGate();
+
+	private:
+		bool _isGated; // Used to store Gate mode status
+
+	protected:
+		// Default constructor to meet canonical orthodox form requirements
+		ScavTrap(void);	
 };
 
 #endif

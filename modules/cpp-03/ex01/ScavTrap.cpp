@@ -6,40 +6,56 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:11:31 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 04:13:04 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 08:29:44 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "utils.h"
 
-// Constructor
+// Default Constructor
+ScavTrap::ScavTrap(void) : ClapTrap()
+{
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+	this->_isGated = false;
+}
+
+// Name Constructor
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
-    std::cout << "ScavTrap constructor called for " << BLUE << _name <<  RESET << std::endl;
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
+    std::cout << "ScavTrap constructor called for " BLUE << _name <<  RESET << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+	this->_isGated = false;
 }
 
 // Copy Constructor
-ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
+ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap()
 {
-    std::cout << "ScavTrap copy constructor called for " << BLUE << _name <<  RESET << std::endl;
+	*this = src;
+    std::cout << "ScavTrap copy constructor called for " BLUE << _name <<  RESET << std::endl;
 }
 
 // Assignment Operator
 ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 {
-    if (this != &src)
-		ClapTrap::operator=(src);
+    if (this != &src) {
+        _name = src._name;
+        _hitPoints = src._hitPoints;
+        _energyPoints = src._energyPoints;
+        _attackDamage = src._attackDamage;
+		_isGated = src._isGated;
+    }
     return *this;
 }
 
 // Destructor
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap destructor called for " << BLUE << _name <<  RESET << std::endl;
+    std::cout << "ScavTrap destructor called for " BLUE << _name <<  RESET << std::endl;
 }
 
 /* ****************	*/
@@ -63,5 +79,9 @@ void ScavTrap::attack(const std::string& target)
 // Special capacity
 void ScavTrap::guardGate()
 {
-	std::cout << BLUE << _name << RESET << " is now in Gate keeper mode" << std::endl;
+	if (this->_isGated == false) {
+		std::cout << BLUE << _name << RESET << " is now in Gate keeper mode" << std::endl;
+		this->_isGated = true;}
+	else
+		std::cout << BLUE << _name << RESET << " is already in Gate keeper mode" << std::endl;
 }

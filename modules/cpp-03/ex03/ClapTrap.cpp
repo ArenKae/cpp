@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 17:41:43 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/15 08:53:13 by acosi            ###   ########.fr       */
+/*   Updated: 2024/07/15 09:09:05 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ClapTrap::ClapTrap(void)
 	: _name("Default name"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap default constructor called for " BLUE << _name <<  RESET << std::endl;
+	std::cout << "ClapTrap default constructor called for " << BLUE << _name <<  RESET << std::endl;
 }
 
 // Name Constructor
@@ -38,10 +38,10 @@ ClapTrap::ClapTrap(const ClapTrap &src)
 ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 {
     if (this != &src) {
-        _name = src._name;
-        _hitPoints = src._hitPoints;
-        _energyPoints = src._energyPoints;
-        _attackDamage = src._attackDamage;
+        this->_name = src._name;
+        this->_hitPoints = src._hitPoints;
+        this->_energyPoints = src._energyPoints;
+        this->_attackDamage = src._attackDamage;
     }
     return *this;
 }
@@ -49,7 +49,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 // Destructor
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap destructor called for " BLUE << _name <<  RESET << std::endl;
+    std::cout << "ClapTrap destructor called for " << BLUE << _name <<  RESET << std::endl;
 }
 
 /* ****************	*/

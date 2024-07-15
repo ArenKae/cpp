@@ -24,7 +24,7 @@ class WrongAnimal
 		WrongAnimal(void);
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &src);
-		~WrongAnimal(void);
+		~WrongAnimal(void); // Not virtual to demonstrate that the derived class destructor is not called
 		WrongAnimal& operator=(const WrongAnimal &src);
 
 		void makeSound(void) const;

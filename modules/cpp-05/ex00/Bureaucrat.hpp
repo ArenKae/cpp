@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:16 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:14:05 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/10 10:39:49 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Bureaucrat
 			be caught by a catch {} block and behave like standard exceptions.
 			The what() method from std::exception returns a C-string and is
 			overridden to return a custom error message.
-			
 		*/
 		class GradeTooHighException : public std::exception {
 			public:
@@ -51,8 +50,6 @@ class Bureaucrat
 
 		// Assignment Operator
 		Bureaucrat& operator=(const Bureaucrat &src);
-
-		
 
 		// Member functions
 		std::string getName() const;

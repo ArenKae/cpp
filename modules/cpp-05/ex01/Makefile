@@ -22,7 +22,7 @@ update_flag := false
 OBJ_DIR = obj/
 
 # Source Files
-SRC_FILES = main.cpp Bureaucrat.cpp
+SRC_FILES = main.cpp Bureaucrat.cpp Form.cpp
 
 # Object Files
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))

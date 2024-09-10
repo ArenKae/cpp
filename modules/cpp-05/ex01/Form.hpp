@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 07:36:16 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:39:42 by acosi            ###   ########.fr       */
+/*   Created: 2024/09/10 10:28:03 by acosi             #+#    #+#             */
+/*   Updated: 2024/09/10 10:39:06 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Bureaucrat.hpp"
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
-class Bureaucrat
+class Form
 {
 	public:
-		/*	Nested Exception Classes
-			Inherit from the exception class from std namespace, allowing them to 
-			be caught by a catch {} block and behave like standard exceptions.
-			The what() method from std::exception returns a C-string and is
-			overridden to return a custom error message.
-		*/
+		// Nested Exception Classes
 		class GradeTooHighException : public std::exception {
 			public:
 				const char *what() const throw() {
@@ -35,35 +31,37 @@ class Bureaucrat
 				const char *what() const throw() {
 					return "Grade too low";}
 		};
-	
+
 		// Default Constructor
-		Bureaucrat(void);
+		Form(void);
 	
 		// Name Constructor
-		Bureaucrat(const std::string &name, int grade);
+		Form(const std::string &name, int grade);
 
 		// Copy Constructor
-		Bureaucrat(const Bureaucrat &src);
+		Form(const Form &src);
 
 		// Destructor
-		~Bureaucrat();
+		~Form();
 
 		// Assignment Operator
-		Bureaucrat& operator=(const Bureaucrat &src);
+		Form& operator=(const Form &src);
 
 		// Member functions
 		std::string getName() const;
-		int getGrade() const;
-		void incrementGrade();
-		void decrementGrade();
-        void signForm();
+		bool getSigned() const;
+		int getSignGrade() const;
+		int getExecGrade();
+		void beSigned(const Bureaucrat &src);
 
 	private:
 		const std::string _name;
-		int _grade;
+		bool _signed;
+		const int _sign_grade;
+		const int _exec_grade;
 };
 
 // Stream redirection (insertion: <<) operator overload :
-std::ostream& operator<<(std::ostream &output, Bureaucrat const &rhs);
+std::ostream& operator<<(std::ostream &output, Form const &rhs);
 
 #endif

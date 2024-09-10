@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:16 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 07:49:02 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/10 08:31:19 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ class Bureaucrat
 		Bureaucrat& operator=(const Bureaucrat &src);
 
 		// Member functions
-		void getName();
-		void getRange();
+		std::string getName() const;
+		int getGrade() const;
 
 	private:
-	const std::string _name;
-	int _grade;
+		const std::string _name;
+		int _grade;
 };
 
 #endif

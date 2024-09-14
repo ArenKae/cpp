@@ -6,40 +6,36 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:24:37 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/15 01:16:51 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include "utils.h"
 
 int main(void)
 {
 	try { // The "try" keword indicates that this block is subject to exception handling.
 		Bureaucrat b1("Palpatine", 2);
+		Form f1("RSA", 1, 150);
+
 		std::cout << b1 << std::endl;
-		b1.incrementGrade();
-		std::cout << b1 << std::endl;
-		b1.incrementGrade(); // Throws GradeTooHighException
-	/*	"catch" is the exception handler, taking as parameter
-		an object of the same type of the expected exception. */
+		std::cout << f1 << std::endl;
+		f1.beSigned(b1); // Throws GradeTooLowException	
 	} catch (std::exception &e) {
 		// Calling the what() method to get the error from the exception
-		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
-		std::cout << std::endl;
-
-	try {
-		Bureaucrat b2("Valorum", 151); // Throws GradeTooLowException
-	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
-		std::cout << std::endl;
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;
+		std::cout << std::endl;}
 	
 	try {
-		Bureaucrat b3("Nute Gunray", 150);
-		std::cout << b3 << std::endl;
-		b3.decrementGrade(); // Throws GradeTooLowException
+		Bureaucrat b2("Valorum", 8);
+		Form f2("Treaty of Coruscant", 15, 150);
+		f2.beSigned(b2);
+		std::cout << f2 << std::endl;
 	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
-
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;
+		std::cout << std::endl;}
+	
 	return 0;
 }

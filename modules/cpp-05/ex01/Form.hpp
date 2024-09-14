@@ -6,15 +6,14 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:03 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:39:06 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/15 01:22:46 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Bureaucrat.hpp"
-
 #ifndef FORM_HPP
 #define FORM_HPP
+
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -23,20 +22,20 @@ class Form
 		class GradeTooHighException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Grade too high";}
+					return "Form grade too high";}
 		};
 		
 		class GradeTooLowException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Grade too low";}
+					return "Form grade too low";}
 		};
 
 		// Default Constructor
 		Form(void);
 	
 		// Name Constructor
-		Form(const std::string &name, int grade);
+		Form(const std::string &name, const int sign_grade, const int exec_grade);
 
 		// Copy Constructor
 		Form(const Form &src);
@@ -51,8 +50,8 @@ class Form
 		std::string getName() const;
 		bool getSigned() const;
 		int getSignGrade() const;
-		int getExecGrade();
-		void beSigned(const Bureaucrat &src);
+		int getExecGrade() const;
+		int beSigned(const Bureaucrat &src);
 
 	private:
 		const std::string _name;

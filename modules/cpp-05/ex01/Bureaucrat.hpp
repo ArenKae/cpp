@@ -6,14 +6,15 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:16 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:39:42 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/15 01:23:43 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
+
+#include <iostream>
 
 class Bureaucrat
 {
@@ -27,13 +28,13 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Grade too high";}
+					return "Bureaucrat grade too high";}
 		};
 		
 		class GradeTooLowException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Grade too low";}
+					return "Bureaucrat grade too low";}
 		};
 	
 		// Default Constructor
@@ -56,7 +57,7 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
-        void signForm();
+        int signForm(const bool _signed, const std::string form) const;
 
 	private:
 		const std::string _name;

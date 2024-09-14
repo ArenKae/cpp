@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:24:37 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/15 00:55:59 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(void)
 	} catch (std::exception &e) {
 		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
 		std::cout << std::endl;
-	
+
 	try {
 		Bureaucrat b3("Nute Gunray", 150);
 		std::cout << b3 << std::endl;

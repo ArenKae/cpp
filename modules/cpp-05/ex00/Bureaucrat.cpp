@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:16:03 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/14 23:45:12 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src)
 // Assignment Operator
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
 {
-	if (this != &src) {
-		this->_grade = src.getGrade();
-	}
+	if (this != &src)
+        *this = src;
 	return *this;
 }
 
@@ -64,7 +63,7 @@ std::ostream& operator<<(std::ostream &output, Bureaucrat const &rhs)
 /* MEMBER FUNCTIONS	*/
 /* ****************	*/
 
-std::string Bureaucrat::getName(void) const
+const std::string Bureaucrat::getName(void) const
 {
 	return this->_name;
 }

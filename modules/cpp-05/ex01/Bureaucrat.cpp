@@ -6,11 +6,12 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:16:03 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/15 01:23:57 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include "utils.h"
 
 // Default Constructor
@@ -41,9 +42,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src)
 // Assignment Operator
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
 {
-	if (this != &src) {
-		this->_grade = src.getGrade();
-	}
+	if (this != &src)
+		*this = src;
 	return *this;
 }
 
@@ -86,4 +86,15 @@ void Bureaucrat::decrementGrade()
 	if (this->_grade + 1 > 150)
 		throw GradeTooLowException();
 	this->_grade++;
+}
+
+int Bureaucrat::signForm(const bool _signed, const std::string form) const
+{
+    if (_signed == false) {
+		std::cout << BLUE << this->getName() << RESET " couldn't sign form " BLUE << form 
+		<< RESET " because " RED "GradeTooLowException" RESET << std::endl;
+        return 1;}
+    else
+		std::cout << BLUE << this->getName() << RESET " signed " BLUE << form << RESET << std::endl;
+    return 0;
 }

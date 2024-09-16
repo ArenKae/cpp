@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:16 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/16 22:57:36 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 00:53:20 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Bureaucrat grade too high";}
+					return "Bureaucrat Grade Too High Exception";}
 		};
 		
 		class GradeTooLowException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Bureaucrat grade too low";}
+					return "Bureaucrat Grade Too Low Exception";}
 		};
 	
 		// Default Constructor
@@ -59,8 +59,8 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
-        int signForm(const bool _signed, const std::string form) const;
-        void executeForm(AForm const &form);
+		int signForm(const bool _signed, const std::string form) const;
+		void executeForm(AForm const &form);
 
 	private:
 		const std::string _name;

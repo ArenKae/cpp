@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/16 22:59:59 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 00:53:17 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 Bureaucrat::Bureaucrat(void)
 	: _name("Default name"), _grade(150)
 {
-	std::cout << "Bureaucrat default constructor called." << std::endl;
+	//std::cout << "Bureaucrat default constructor called." << std::endl;
 }
 
 // Name constructor
 Bureaucrat::Bureaucrat(const std::string &name,int grade)
 	: _name(name), _grade(grade)
 {
-	std::cout << "Bureaucrat constructor called for " << BLUE << _name << RESET << std::endl;
+	//std::cout << "Bureaucrat constructor called for " << BLUE << _name << RESET << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException(); // "throw" keyword is used to signal an exception
 	if (grade > 150)
@@ -50,7 +50,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
 // Destructor
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destructor called for " << BLUE << _name << RESET << std::endl; 
+	//std::cout << "Bureaucrat destructor called for " << BLUE << _name << RESET << std::endl; 
 }
 
 //	Stream redirection (insertion: <<) operator overload
@@ -103,15 +103,7 @@ int Bureaucrat::signForm(const bool _signed, const std::string form) const
 // Attempts to execute the form and prints an appropriate message.
 void Bureaucrat::executeForm(AForm const &form)
 {
-    if (form.execute(*this) == 0) {
-        std::cout << BLUE << this->getName() << RESET " executed " BLUE << form.getName() << RESET << std::endl;}
-    else {
-        std::string str;
-        if (form.getSigned() == false)
-            str = "FormNotSignedException";
-        else
-            str = "BureaucratGradeTooLowException";
-
-		std::cout << BLUE << this->getName() << RESET " couldn't execute form " BLUE << form 
-		<< RESET " because " RED << str << RESET << std::endl;}
+	form.execute(*this);
+	std::cout << BLUE << this->getName() << RESET " executed " GREEN 
+	<< form.getName() << RESET << std::endl;
 }

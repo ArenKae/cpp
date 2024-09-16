@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:03 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/16 22:51:32 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 00:53:12 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ class AForm
 		class GradeTooHighException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Form grade too high";}
+					return "Form Grade Too High Exception";}
 		};
 		
 		class GradeTooLowException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Form grade too low";}
+					return "Form Grade Too Low Exception";}
 		};
 
 		class FormNotSignedException : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Form not signed";}
+					return "Form Not Signed Exception";}
 		};
 
 		// Default Constructor

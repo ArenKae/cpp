@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/16 21:45:23 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 00:54:21 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ AForm::AForm(void)
 AForm::AForm(const std::string &name, const int sign_grade, const int exec_grade)
 	: _name(name), _signed(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
-	std::cout << "AForm constructor called for " << BLUE << _name << RESET << std::endl;
+	std::cout << "AForm constructor called for " << GREEN << _name << RESET << std::endl;
 	if (_sign_grade < 1)
 		throw GradeTooHighException(); // "throw" keyword is used to signal an exception
 	if (_sign_grade > 150)
@@ -40,7 +40,7 @@ AForm::AForm(const AForm &src)
 	: _name(src._name), _sign_grade(src.getSignGrade()), _exec_grade(src.getExecGrade())
 {
 	*this = src;
-	std::cout << "AForm copy constructor called for " << BLUE << _name << RESET << std::endl;
+	std::cout << "AForm copy constructor called for " << GREEN << _name << RESET << std::endl;
 }
 
 // Assignment Operator
@@ -54,7 +54,7 @@ AForm& AForm::operator=(const AForm &src)
 // Destructor
 AForm::~AForm()
 {
-	std::cout << "AForm destructor called for " << BLUE << _name << RESET << std::endl; 
+	//std::cout << "AForm destructor called for " << GREEN << _name << RESET << std::endl; 
 }
 
 //	Stream redirection (insertion: <<) operator overload

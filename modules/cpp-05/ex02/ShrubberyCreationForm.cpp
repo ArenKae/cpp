@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/16 23:45:34 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 00:53:27 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 	: AForm(target + "_shrubbery", 145, 137), _target(target)
 {
-	std::cout << "ShrubberyCreationForm constructor called for " << BLUE << _name << RESET << std::endl;
+	std::cout << "ShrubberyCreationForm constructor called for " << GREEN << _name << RESET << std::endl;
 }
 
 // Copy Constructor
@@ -34,7 +34,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
 	: AForm(src), _target(src.getTarget())
 {
 	*this = src;
-	std::cout << "ShrubberyCreationForm copy constructor called for " << BLUE << _name << RESET << std::endl;
+	std::cout << "ShrubberyCreationForm copy constructor called for " << GREEN << _name << RESET << std::endl;
 }
 
 // Assignment Operator
@@ -48,7 +48,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 // Destructor
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "ShrubberyCreationForm destructor called for " << BLUE << _name << RESET << std::endl; 
+	//std::cout << "ShrubberyCreationForm destructor called for " << GREEN << _name << RESET << std::endl; 
 }
 
 //	Stream redirection (insertion: <<) operator overload
@@ -76,13 +76,21 @@ std::string ShrubberyCreationForm::getTarget(void) const
 
 int ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
 {
+	std::string str;
+
 	// Checks that the form is signed
-	if (this->getSigned() == false)
-		throw AForm::FormNotSignedException();
+	if (this->getSigned() == false) {
+		str = "FormNotSignedException";
+		std::cout << BLUE << exectuor.getName() << RESET " couldn't execute form " GREEN << 
+		this->getName() << RESET " because " RED << str << RESET << std::endl;
+		throw AForm::FormNotSignedException();}
 
 	// Checks that the bureaucrat has sufficient grade to execute
-	else if (exectuor.getGrade() > this->getExecGrade())
-		throw AForm::GradeTooLowException();
+	else if (exectuor.getGrade() > this->getExecGrade()) {
+		str = "BureaucratGradeTooLowException";
+		std::cout << BLUE << exectuor.getName() << RESET " couldn't execute form " GREEN << 
+		this->getName() << RESET " because " RED << str << RESET << std::endl;
+		throw Bureaucrat::GradeTooLowException();}
 
 	// Execute the form
 	else {
@@ -91,14 +99,19 @@ int ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
 			{std::cerr <<  RED << "Error while creating file "  << RESET << "\""
 			YELLOW << getTarget() + "_shrubbery" << RESET << "\"" << std::endl;
 			return EXIT_FAILURE;}
-		file << "       ###\n";
-		file << "      #o###\n";
-		file << "    #####o###\n";
-		file << "   #o#\\#|#/###\n";
-		file << "    ###\\|/#o#\n";
-		file << "     # }|{  #\n";
-		file << "       }|{\n";
-		file.close();
-	}
+		file << "\n"
+				"              v .   ._, |_  .,\n"
+				"           `-._\\/  .  \\ /    |/_\n"
+				"               \\\\  _\\, y | \\//\n"
+				"         _\\_.___\\\\, \\/ -\\.||\n"
+				"           `7-,--.`._||  / / ,\n"
+				"           /'     `-. `./ / |/_.\n"
+				"                     |    |//\n"
+				"                     |_    /\n"
+				"                     |-   |\n"
+				"                     |   =|\n"
+				"                     |    |\n"
+				"--------------------/ ,  . \\--------._";
+		file.close(); }
 	return EXIT_SUCCESS;
 }

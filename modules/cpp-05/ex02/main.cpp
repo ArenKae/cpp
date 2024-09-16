@@ -6,12 +6,12 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/15 05:19:28 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:44:42 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "utils.h"
 
@@ -21,11 +21,11 @@ int main(void)
 		Bureaucrat b1("Palpatine", 2);
 		ShrubberyCreationForm f1("home");
 		f1.beSigned(b1);
-		f1.execute(b1);
+		b1.executeForm(f1);
 	} catch (std::exception &e) {
 		// Calling the what() method to get the error from the exception
-		std::cerr << RED "Error: " << e.what() << RESET << std::endl;
-		std::cout << std::endl;}
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;}
+	std::cout << "----------------------------------------" << std::endl;
 	
 	// try {
 	// 	Bureaucrat b2("Valorum", 8);

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/14 23:45:12 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 23:47:46 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src)
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
 {
 	if (this != &src)
-        *this = src;
+		*this = src;
 	return *this;
 }
 

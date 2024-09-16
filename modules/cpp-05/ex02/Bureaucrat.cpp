@@ -6,11 +6,12 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/15 02:40:32 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:59:59 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 #include "utils.h"
 
 // Default Constructor
@@ -87,13 +88,30 @@ void Bureaucrat::decrementGrade()
 	this->_grade++;
 }
 
+//  Prints an appropriate message when a bureaucrat attempts to sign a form.
 int Bureaucrat::signForm(const bool _signed, const std::string form) const
 {
-    if (_signed == false) {
+	if (_signed == false) {
 		std::cout << BLUE << this->getName() << RESET " couldn't sign form " BLUE << form 
 		<< RESET " because " RED "GradeTooLowException" RESET << std::endl;
-        return 1;}
-    else
+		return EXIT_FAILURE;}
+	else
 		std::cout << BLUE << this->getName() << RESET " signed " BLUE << form << RESET << std::endl;
-    return 0;
+	return EXIT_SUCCESS;
+}
+
+// Attempts to execute the form and prints an appropriate message.
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if (form.execute(*this) == 0) {
+        std::cout << BLUE << this->getName() << RESET " executed " BLUE << form.getName() << RESET << std::endl;}
+    else {
+        std::string str;
+        if (form.getSigned() == false)
+            str = "FormNotSignedException";
+        else
+            str = "BureaucratGradeTooLowException";
+
+		std::cout << BLUE << this->getName() << RESET " couldn't execute form " BLUE << form 
+		<< RESET " because " RED << str << RESET << std::endl;}
 }

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:16 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/15 01:23:43 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 23:47:04 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
-        int signForm(const bool _signed, const std::string form) const;
+		int signForm(const bool _signed, const std::string form) const;
 
 	private:
 		const std::string _name;

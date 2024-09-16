@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/15 02:41:28 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 23:47:00 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,11 @@ void Bureaucrat::decrementGrade()
 
 int Bureaucrat::signForm(const bool _signed, const std::string form) const
 {
-    if (_signed == false) {
+	if (_signed == false) {
 		std::cout << BLUE << this->getName() << RESET " couldn't sign form " BLUE << form 
 		<< RESET " because " RED "GradeTooLowException" RESET << std::endl;
-        return 1;}
-    else
+		return 1;}
+	else
 		std::cout << BLUE << this->getName() << RESET " signed " BLUE << form << RESET << std::endl;
-    return 0;
+	return 0;
 }

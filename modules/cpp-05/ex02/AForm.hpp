@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:03 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/15 04:43:58 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 22:51:32 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define AFORM_HPP
 
 #include "Bureaucrat.hpp"
+
 
 class AForm
 {
@@ -47,7 +48,7 @@ class AForm
 		AForm(const AForm &src);
 
 		// Destructor
-		// The virtual keyword ensures leak-safe ressource cleaning of derived classes.
+		// A virtual destructor ensures leak-safe ressource cleaning of derived classes.
 		virtual ~AForm();
 
 		// Assignment Operator
@@ -61,7 +62,7 @@ class AForm
 		int beSigned(const Bureaucrat &src);
 
 		//	Pure virtual function, making AForm an abstract class that can't be instanciated.
-		virtual void execute(Bureaucrat const &exectuor) const = 0;
+		virtual int execute(Bureaucrat const &exectuor) const = 0;
 
 	protected:
 		const std::string _name;

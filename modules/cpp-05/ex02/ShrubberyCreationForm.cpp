@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/15 05:28:52 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 23:45:34 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,23 @@ std::string ShrubberyCreationForm::getTarget(void) const
 	return this->_target;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
+int ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
 {
+	// Checks that the form is signed
 	if (this->getSigned() == false)
 		throw AForm::FormNotSignedException();
+
+	// Checks that the bureaucrat has sufficient grade to execute
 	else if (exectuor.getGrade() > this->getExecGrade())
 		throw AForm::GradeTooLowException();
+
+	// Execute the form
 	else {
 		std::ofstream file((getTarget() + "_shrubbery").c_str()); // Creating output file
 		if (!file.is_open() || file.fail())	// Error handling
 			{std::cerr <<  RED << "Error while creating file "  << RESET << "\""
 			YELLOW << getTarget() + "_shrubbery" << RESET << "\"" << std::endl;
-			return ;}
+			return EXIT_FAILURE;}
 		file << "       ###\n";
 		file << "      #o###\n";
 		file << "    #####o###\n";
@@ -95,4 +100,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
 		file << "       }|{\n";
 		file.close();
 	}
+	return EXIT_SUCCESS;
 }

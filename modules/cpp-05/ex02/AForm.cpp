@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/15 04:57:37 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/16 21:45:23 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int AForm::getExecGrade(void) const
 	return this->_exec_grade;
 }
 
+//  Attemtps to sign the form and prints an appropriate message or exception.
 int AForm::beSigned(const Bureaucrat &src)
 {
 	if (src.getGrade() > this->getSignGrade()) {

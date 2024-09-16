@@ -70,7 +70,7 @@ do_fclean:
 clean :
 	@echo "$(YELLOW)Cleaning $(NAME)... $(DEF_COLOR)"
 	@rm -rf $(OBJ_DIR)
-	@rm *_shrubbery
+	-@rm *_shrubbery 2>/dev/null || true
 	@if [ "$(fclean_flag)" = "false" ]; then \
 		echo "$(GREEN)>>> $(NAME) object files cleaned!$(DEF_COLOR)"; \
 fi

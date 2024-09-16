@@ -6,12 +6,12 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 00:54:21 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 01:07:12 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
-#include "utils.h"
+#include "../include/AForm.hpp"
+#include "../include/utils.h"
 
 // Default Constructor
 AForm::AForm(void)

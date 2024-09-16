@@ -6,13 +6,13 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 00:53:17 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 01:07:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-#include "utils.h"
+#include "../include/Bureaucrat.hpp"
+#include "../include/AForm.hpp"
+#include "../include/utils.h"
 
 // Default Constructor
 Bureaucrat::Bureaucrat(void)

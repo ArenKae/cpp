@@ -6,14 +6,15 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 00:53:04 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 01:56:25 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "utils.h"
+#include "../include/AForm.hpp"
+#include "../include/Bureaucrat.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
+#include "../include/utils.h"
 
 int main(void)
 {
@@ -61,7 +62,16 @@ int main(void)
 
 	std::cout << "---------------------------------------------" << std::endl;
 
-	
+	try {
+		std::cout << MAGENTA "[ROBOTOMY REQUEST OK TEST]" RESET << std::endl;
+		Bureaucrat b2("Sidious", 45);
+		RobotomyRequestForm f2("Vador");
+		f2.beSigned(b2);
+		b2.executeForm(f2);
+	} catch (std::exception &e) {
+		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
+
+	std::cout << "---------------------------------------------" << std::endl;
 
 	return 0;
 }

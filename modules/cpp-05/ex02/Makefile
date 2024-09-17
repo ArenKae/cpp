@@ -71,7 +71,9 @@ do_fclean:
 clean :
 	@echo "$(YELLOW)Cleaning $(NAME)... $(DEF_COLOR)"
 	@rm -rf $(OBJ_DIR)
+# Mute errors by redirecting to dev/null and ensure make re doesn't stop by returning true
 	-@rm *_shrubbery 2>/dev/null || true
+
 	@if [ "$(fclean_flag)" = "false" ]; then \
 		echo "$(GREEN)>>> $(NAME) object files cleaned!$(DEF_COLOR)"; \
 fi

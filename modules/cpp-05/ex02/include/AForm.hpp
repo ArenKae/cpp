@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:03 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 02:07:22 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 02:40:51 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define AFORM_HPP
 
 #include "Bureaucrat.hpp"
-
 
 class AForm
 {

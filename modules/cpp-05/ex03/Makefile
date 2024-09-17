@@ -23,7 +23,7 @@ OBJ_DIR = obj/
 SRC_DIR = src/
 
 # Source Files
-SRC_FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRC_FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 # Object Files
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))

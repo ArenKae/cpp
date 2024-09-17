@@ -6,7 +6,85 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 02:28:52 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 02:28:53 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 04:50:06 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/Intern.hpp"
+#include "../include/Bureaucrat.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
+#include "../include/utils.h"
+
+// Default Constructor
+Intern::Intern(void)
+{
+	std::cout << "Intern constructor called." << std::endl;
+}
+
+// Copy Constructor
+Intern::Intern(const Intern &src)
+{
+	*this = src;
+	std::cout << "Intern copy constructor called." << std::endl;
+}
+
+// Assignment Operator
+Intern& Intern::operator=(const Intern &src)
+{
+	if (this != &src)
+		*this = src;
+	return *this;
+}
+
+// Destructor
+Intern::~Intern()
+{
+	std::cout << "Intern destructor called." << std::endl; 
+}
+
+//	Stream redirection (insertion: <<) operator overload
+std::ostream& operator<<(std::ostream &output, Intern const &rhs)
+{
+	output << BLUE << rhs << RESET << std::endl;
+	return output;
+}
+
+/*   -----FUNCTIONS-----   */
+
+AForm* createShrubbery(const std::string &target)
+{
+    return new ShrubberyCreationForm(target);
+}
+
+AForm* createRobotomy(const std::string &target)
+{
+    return new RobotomyRequestForm(target);
+}
+
+AForm* createPresidential(const std::string &target)
+{
+    return new PresidentialPardonForm(target);
+}
+
+AForm* Intern::makeForm(const std::string name, const std::string target) const
+{
+    // Array of valid form names
+    std::string formName[3] = 
+		{"shrubbery creation", "robotomy request", "presidential pardon"};
+
+    // Array of function pointers for creating forms
+    AForm* (*formArray[3])(const std::string &target) = 
+		{&createShrubbery, &createRobotomy, &createPresidential};
+
+    // Iterate over the form names to find the correct one
+    for (int i = 0; i < 3; ++i) {
+        if (formName[i] == name) {
+            std::cout << "Intern creates " << GREEN << name << RESET << std::endl;
+            return formArray[i](target); // Call the corresponding form creation function
+        }
+    }
+    std::cout << RED "Error: Form name \"" << name << "\" not recognized!" RESET << std::endl;
+	throw (Intern::FormNotRecognized());
+}

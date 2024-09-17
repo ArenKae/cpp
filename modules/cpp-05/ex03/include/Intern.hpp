@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 02:28:56 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 04:40:38 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 05:02:03 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Intern
 {
 	public: 
 
-		class FormNotRecognized : public std::exception {
+		class InvalidFormName : public std::exception {
 			public:
 				const char *what() const throw() {
-					return "Form Name Not Recognized";}
+					return "Invalid Form Name";}
 		};
 
 		// Default Constructor

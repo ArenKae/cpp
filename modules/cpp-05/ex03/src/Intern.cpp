@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 02:28:52 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 04:50:06 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 05:01:03 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ AForm* Intern::makeForm(const std::string name, const std::string target) const
             return formArray[i](target); // Call the corresponding form creation function
         }
     }
-    std::cout << RED "Error: Form name \"" << name << "\" not recognized!" RESET << std::endl;
-	throw (Intern::FormNotRecognized());
+	// Exception for error handling with invalid form name
+	throw (Intern::InvalidFormName());
 }

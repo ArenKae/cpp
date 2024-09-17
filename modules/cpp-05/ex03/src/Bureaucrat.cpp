@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 02:17:10 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 05:07:25 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 Bureaucrat::Bureaucrat(void)
 	: _name("Default name"), _grade(150)
 {
-	//std::cout << "Bureaucrat default constructor called." << std::endl;
+	std::cout << "Bureaucrat default constructor called." << std::endl;
 }
 
 // Name constructor

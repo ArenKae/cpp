@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:03 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 00:53:12 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 02:07:22 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ class AForm
 		int beSigned(const Bureaucrat &src);
 
 		//	Pure virtual function, making AForm an abstract class that can't be instanciated.
-		virtual int execute(Bureaucrat const &exectuor) const = 0;
+		virtual void execute(Bureaucrat const &exectuor) const = 0;
 
 	protected:
 		const std::string _name;

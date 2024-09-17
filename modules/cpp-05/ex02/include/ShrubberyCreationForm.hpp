@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:33:38 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 00:53:30 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 02:07:14 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class ShrubberyCreationForm : public AForm
 
 		// Member functions
 		std::string getTarget() const;
-		virtual int execute(Bureaucrat const &exectuor) const;
+		virtual void execute(Bureaucrat const &exectuor) const;
 		
 	private:
 		std::string _target;

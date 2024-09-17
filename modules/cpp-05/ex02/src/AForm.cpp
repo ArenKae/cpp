@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 01:07:12 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 02:17:22 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ AForm::~AForm()
 //	Stream redirection (insertion: <<) operator overload
 std::ostream& operator<<(std::ostream &output, AForm const &rhs)
 {
-	output << "AForm name: " << BLUE << rhs.getName() << RESET << std::endl;
+	output << "AForm name: " << GREEN << rhs.getName() << RESET << std::endl;
 	output << "AForm signed: ";
 	if (rhs.getSigned())
 		output << GREEN << "true" << RESET << std::endl;

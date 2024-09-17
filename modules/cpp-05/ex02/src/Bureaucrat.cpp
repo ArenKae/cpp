@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 01:07:50 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 02:17:10 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,11 @@ void Bureaucrat::decrementGrade()
 int Bureaucrat::signForm(const bool _signed, const std::string form) const
 {
 	if (_signed == false) {
-		std::cout << BLUE << this->getName() << RESET " couldn't sign form " BLUE << form 
+		std::cout << BLUE << this->getName() << RESET " couldn't sign form " GREEN << form 
 		<< RESET " because " RED "GradeTooLowException" RESET << std::endl;
 		return EXIT_FAILURE;}
 	else
-		std::cout << BLUE << this->getName() << RESET " signed " BLUE << form << RESET << std::endl;
+		std::cout << BLUE << this->getName() << RESET " signed " GREEN << form << RESET << std::endl;
 	return EXIT_SUCCESS;
 }
 
@@ -104,6 +104,5 @@ int Bureaucrat::signForm(const bool _signed, const std::string form) const
 void Bureaucrat::executeForm(AForm const &form)
 {
 	form.execute(*this);
-	std::cout << BLUE << this->getName() << RESET " executed " GREEN 
-	<< form.getName() << RESET << std::endl;
+	std::cout << BLUE << this->getName() << RESET " executed " GREEN << form.getName() << RESET << std::endl;
 }

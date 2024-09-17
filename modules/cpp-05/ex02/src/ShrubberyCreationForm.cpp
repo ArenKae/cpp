@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:28:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 01:08:05 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 02:10:24 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 
 // Name constructor
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: AForm(target + "_shrubbery", 145, 137), _target(target)
+	: AForm("Shrubbery Creation Form", 145, 137), _target(target)
 {
 	std::cout << "ShrubberyCreationForm constructor called for " << GREEN << _name << RESET << std::endl;
 }
@@ -74,7 +74,7 @@ std::string ShrubberyCreationForm::getTarget(void) const
 	return this->_target;
 }
 
-int ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
+void ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
 {
 	std::string str;
 
@@ -96,9 +96,9 @@ int ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
 	else {
 		std::ofstream file((getTarget() + "_shrubbery").c_str()); // Creating output file
 		if (!file.is_open() || file.fail())	// Error handling
-			{std::cerr <<  RED << "Error while creating file "  << RESET << "\""
-			YELLOW << getTarget() + "_shrubbery" << RESET << "\"" << std::endl;
-			return EXIT_FAILURE;}
+			{std::cerr <<  RED << "Error while creating file "  << RESET <<
+			YELLOW << getTarget() + "_shrubbery" << RESET << std::endl;
+			return ;}
 		file << "\n"
 				"              v .   ._, |_  .,\n"
 				"           `-._\\/  .  \\ /    |/_\n"
@@ -112,6 +112,5 @@ int ShrubberyCreationForm::execute(Bureaucrat const &exectuor) const
 				"                     |   =|\n"
 				"                     |    |\n"
 				"--------------------/ ,  . \\--------._";
-		file.close(); }
-	return EXIT_SUCCESS;
+		file.close();}
 }

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 01:56:25 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/17 02:13:52 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../include/Bureaucrat.hpp"
 #include "../include/ShrubberyCreationForm.hpp"
 #include "../include/RobotomyRequestForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
 #include "../include/utils.h"
 
 int main(void)
@@ -72,6 +73,15 @@ int main(void)
 		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
 
 	std::cout << "---------------------------------------------" << std::endl;
+
+	try {
+		std::cout << MAGENTA "[PRESIDENTIAL PARDON OK TEST]" RESET << std::endl;
+		Bureaucrat b3("Valorum", 4);
+		PresidentialPardonForm f3("Nute Gunray");
+		f3.beSigned(b3);
+		b3.executeForm(f3);
+	} catch (std::exception &e) {
+		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
 
 	return 0;
 }

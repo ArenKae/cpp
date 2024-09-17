@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 01:21:20 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 02:07:33 by acosi            ###   ########.fr       */
+/*   Created: 2024/09/17 01:58:29 by acosi             #+#    #+#             */
+/*   Updated: 2024/09/17 02:07:27 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMY_REQUEST_FORM_HPP
-#define ROBOTOMY_REQUEST_FORM_HPP
+#ifndef PRESIDENTION_PARDON_FORM_HPP
+#define PRESIDENTION_PARDON_FORM_HPP
 
 #include "AForm.hpp"
 
-class RobotomyRequestForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	public: 
 		// Default Constructor
-		RobotomyRequestForm(void);
+		PresidentialPardonForm(void);
 	
 		// Name Constructor
-		RobotomyRequestForm(const std::string &target);
+		PresidentialPardonForm(const std::string &target);
 
 		// Copy Constructor
-		RobotomyRequestForm(const RobotomyRequestForm &src);
+		PresidentialPardonForm(const PresidentialPardonForm &src);
 
 		// Destructor
-		~RobotomyRequestForm();
+		~PresidentialPardonForm();
 
 		// Assignment Operator
-		RobotomyRequestForm& operator=(const RobotomyRequestForm &src);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm &src);
 
 		// Member functions
 		std::string getTarget() const;

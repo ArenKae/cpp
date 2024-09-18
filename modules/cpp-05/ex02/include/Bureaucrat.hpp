@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:36:16 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 00:53:20 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/18 02:33:27 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-// Forward declaration for the compiler
+// Forward declaration for the compiler, avoid circular dependencies
 class AForm;
 
 class Bureaucrat

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 02:28:52 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 05:01:03 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/18 02:39:16 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Intern::~Intern()
 //	Stream redirection (insertion: <<) operator overload
 std::ostream& operator<<(std::ostream &output, Intern const &rhs)
 {
-	output << BLUE << rhs << RESET << std::endl;
+    (void)rhs;
 	return output;
 }
 

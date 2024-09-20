@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/18 03:08:18 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/20 05:08:34 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,20 @@ int main(void)
 		std::cout << MAGENTA "[GRADE OUT OF BOUNDS TEST]" RESET << std::endl;
 		Bureaucrat b1("Palpatine", 189);
 	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
-	
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;}
+
+	std::cout << "\n---------------------------------------------\n" << std::endl;
+
 	try {
 		std::cout << MAGENTA "[BUREAUCRAT GRADE TOO LOW TO SIGN TEST]" RESET << std::endl;
 		Bureaucrat b1("Palpatine", 147);
 		ShrubberyCreationForm f1("home");
 		f1.beSigned(b1);
 	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
-	
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;}
+
+	std::cout << "\n---------------------------------------------\n" << std::endl;
+
 	try {
 		std::cout << MAGENTA "[FORM NOT SIGNED TEST]" RESET << std::endl;
 		Bureaucrat b1("Palpatine", 2);
@@ -39,7 +43,9 @@ int main(void)
 		std::cout << f1 << std::endl;
 		b1.executeForm(f1);
 	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;}
+
+	std::cout << "\n---------------------------------------------\n" << std::endl;
 
 	try {
 		std::cout << MAGENTA "[BUREAUCRAT GRADE TOO LOW TO EXECUTE TEST]" RESET << std::endl;
@@ -49,7 +55,9 @@ int main(void)
 		std::cout << f1 << std::endl;
 		b1.executeForm(f1);
 	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;}
+
+	std::cout << "\n---------------------------------------------\n" << std::endl;
 
 	try {
 		std::cout << MAGENTA "[SHRUBBERY CREATION OK TEST]" RESET << std::endl;
@@ -58,20 +66,21 @@ int main(void)
 		f1.beSigned(b1);
 		b1.executeForm(f1);
 	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;}
 
-	std::cout << "---------------------------------------------" << std::endl;
-
+	std::cout << "\n---------------------------------------------\n" << std::endl;
+	
 	try {
 		std::cout << MAGENTA "[ROBOTOMY REQUEST OK TEST]" RESET << std::endl;
 		Bureaucrat b2("Sidious", 45);
 		RobotomyRequestForm f2("Vador");
 		f2.beSigned(b2);
+		f2.execute(b2);
 		b2.executeForm(f2);
 	} catch (std::exception &e) {
-		std::cerr << RED "Error: " << e.what() << RESET << '\n' << std::endl;}
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl;}
 
-	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "\n---------------------------------------------\n" << std::endl;
 
 	try {
 		std::cout << MAGENTA "[PRESIDENTIAL PARDON OK TEST]" RESET << std::endl;

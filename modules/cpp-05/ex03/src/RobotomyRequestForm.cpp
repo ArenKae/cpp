@@ -6,14 +6,12 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 01:21:24 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 02:08:41 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/20 07:39:22 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/RobotomyRequestForm.hpp"
 #include "../include/utils.h"
-#include <cstdlib>
-#include <ctime>
 
 // Default Constructor
 RobotomyRequestForm::RobotomyRequestForm(void)
@@ -95,8 +93,6 @@ void RobotomyRequestForm::execute(Bureaucrat const &exectuor) const
 	// Execute the form
 	else {
 		std::cout << YELLOW ">>> * Drilling noises *" << std::endl;
-		// Seeds the random generator with the current time to ensure a different number each time the program runs.
-		std::srand(std::time(0));
     	if (std::rand() % 2 == 0) {
         std::cout << ">>> " << this->getTarget() << " has been robotomized successfully!" RESET << std::endl;
     	} else {

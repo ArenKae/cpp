@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/18 03:24:21 by acosi            ###   ########.fr       */
+/*   Updated: 2024/09/20 07:39:45 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 int main(void)
 {
+	std::srand(std::time(0));
+
 	try {
 		std::cout << MAGENTA "[INVALID FORM NAME TEST]" RESET << std::endl;
         Bureaucrat b1; Intern i1; AForm *f1;

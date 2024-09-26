@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 03:30:55 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/26 01:48:17 by acosi            ###   ########.fr       */
+/*   Created: 2024/06/17 14:51:08 by acosi             #+#    #+#             */
+/*   Updated: 2024/09/20 07:32:33 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef UTILS_H
+#define UTILS_H
 
-int main(int ac, char **av)
-{
-	(void)ac;
-    std::string str(av[1]);
-	ScalarConverter::convert(str);
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+#define RESET "\033[0m"
 
-	return 0;
-}
+#endif

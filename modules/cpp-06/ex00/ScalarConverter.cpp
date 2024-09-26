@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 03:30:55 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/26 01:48:17 by acosi            ###   ########.fr       */
+/*   Created: 2024/09/26 01:45:04 by acosi             #+#    #+#             */
+/*   Updated: 2024/09/26 01:53:20 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include "utils.h"
 
-int main(int ac, char **av)
+static void print(std::string str)
 {
-	(void)ac;
-    std::string str(av[1]);
-	ScalarConverter::convert(str);
+	std::cout << GREEN << str << RESET << std::endl;
+}
 
-	return 0;
+void ScalarConverter::convert(std::string str)
+{
+	print(str);
 }

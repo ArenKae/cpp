@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 04:38:07 by acosi             #+#    #+#             */
-/*   Updated: 2024/07/08 13:45:01 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/14 22:14:21 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int    replace(char **av)
 {
 	/*	std::ifstream (input file stream) is a class from the C++ Standard Library used to read data from files.
-		We create an instance "input_file" and pass the file to open  as argument to the constructor.
+		We create an instance "input_file" and pass the file to open as argument to the constructor.
 		By default, the file is open in read-only mode (std::ifstream::in) but this argument can be changed.
 		The constructor automatically calls the method open() but we could also do it explicitely with :
 		input_file.open(av[1]);	*/

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 01:12:29 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/14 22:41:06 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/15 04:32:31 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <string>
 #include <sstream>
 #include <cctype>
+#include <cmath>
+#include <climits>
+#include <iomanip>
 
 class ScalarConverter
 {
@@ -24,7 +27,7 @@ class ScalarConverter
 		/*	Static member functions belong to the class rather than the object (instance).
 			They don't need the class to be instanciated. They have no this-> pointer, 
 			and can only access other static members of the class. */
-		static void convert(std::string str);
+		static void convert(const std::string &str);
 
 	private:
 		// Default constructor #OrthodoxCanoncialForm

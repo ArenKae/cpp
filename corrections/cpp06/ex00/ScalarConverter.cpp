@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 07:31:22 by dtassel           #+#    #+#             */
-/*   Updated: 2024/10/15 04:44:27 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/28 15:34:20 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,13 +204,13 @@ void ScalarConverter::toFloat(const double &value, const std::string &input, con
     float nb;
     nb = static_cast<float>(value);
     if (p != -1 && type == "float")
-        std::cout << std::fixed << std::setprecision(p - 1) << "1float : " << nb << "f" << std::endl;
+        std::cout << std::fixed << std::setprecision(p - 1) << "float : " << nb << "f" << std::endl;
     else if (p != -1)
-        std::cout << std::fixed << std::setprecision(p) << "2float : " << nb << "f" << std::endl;
+        std::cout << std::fixed << std::setprecision(p) << "float : " << nb << "f" << std::endl;
     else if (type == "char")
-        std::cout << std::fixed << std::setprecision(1) << "3float : " << static_cast<float>(input[0]) << "f" << std::endl;
+        std::cout << std::fixed << std::setprecision(1) << "float : " << static_cast<float>(input[0]) << "f" << std::endl;
     else
-        std::cout << std::fixed << std::setprecision(1) << "4float : " << nb << "f" << std::endl;
+        std::cout << std::fixed << std::setprecision(1) << "float : " << nb << "f" << std::endl;
 }
 
 void ScalarConverter::toChar(const double &value, const std::string &input, const std::string &type)

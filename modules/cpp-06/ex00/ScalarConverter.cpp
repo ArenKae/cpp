@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 01:45:04 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/15 05:01:06 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/28 17:00:44 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "utils.h"
 
 // Test if the parameter is a char type.
-static bool    is_char(const std::string &str)
+static bool    isChar(const std::string &str)
 {
 	if (str.length() == 1 && !isdigit(str[0]))
 		return true;
@@ -23,18 +23,18 @@ static bool    is_char(const std::string &str)
 }
 
 // Test if the parameter is an integer type.
-static bool    is_integer(const std::string &str)
+static bool    isInt(const std::string &str)
 {
     int    nb;
-    std::istringstream    iss(str);	// Creates a string stream object (iss) using the string str.
+    std::istringstream    iss(str);	// Creates an input string stream object (iss) using the string str.
     iss >> nb;	// The >> operator attempts to convert iss into the type of nb (int).
 	
-	// Returns true if there are no extra characters left in the stream and if no conversion errors occur.
+	// Returns true if there are no extra characters left in the stream and if no conversion errors occurs.
     return (iss.eof() && !iss.fail());
 }
 
 // Test if the parameter is a double type.
-static bool    is_double(const std::string &str)
+static bool    isDouble(const std::string &str)
 {
 	if (str == "inf" || str == "+inf" || str == "-inf" || str == "nan")
 		return true;
@@ -45,7 +45,7 @@ static bool    is_double(const std::string &str)
 }
 
 // Test if the parameter is a float type.
-static bool    is_float(const std::string &str)
+static bool    isFloat(const std::string &str)
 {
 	if (str == "inff" || str == "+inff" || str == "-inff" || str == "nanf")
 		return true;
@@ -57,14 +57,14 @@ static bool    is_float(const std::string &str)
         iss >> nb;	// Attempts to convert the trimmed string into a float
         return (iss.eof() && !iss.fail());
     }
-    return (false);
+    return false;
 }
 
 static std::string findType(const std::string &str)
 {
 	int    type = -1;
 
-    bool (*fuctions[])(const std::string &str) = {&is_char, &is_integer, &is_float, &is_double,};
+    bool (*fuctions[])(const std::string &str) = {&isChar, &isInt, &isFloat, &isDouble,};
     for (int i = 0; i < 4; i++)
     {
         if (fuctions[i](str))
@@ -79,7 +79,7 @@ static std::string findType(const std::string &str)
 			return "char";
 			break;
 		case 1:
-			return "integer";
+			return "int";
 			break;
 		case 2:
 			return "float";
@@ -93,15 +93,19 @@ static std::string findType(const std::string &str)
 	}
 }
 
-void toChar(const double &value, const std::string &type)
+void toChar(const std::string &str, const std::string &type)
 {
-	char convertedChar = static_cast<char>(value);
-
+	double value;
+	if (type == "char")
+		value = static_cast<int>(str[0]);
+	else if (type == "int" || type == "double" || type == "float")
+		value = atof(str.c_str());
+	
 	if (type == "char" && std::isprint(value))
-        std::cout << "char : \'" << convertedChar << "\'" << std::endl;
+		std::cout << "char : \'" << static_cast<char>(value) << "\'" << std::endl;
 
 	else if ((type == "int" || type == "double" || type == "float") && value >= 32 && value <= 126)
-        std::cout << "char : \'" << convertedChar << "\'" << std::endl;
+        std::cout << "char : \'" << static_cast<char>(value) << "\'" << std::endl;
 
     else if (value < INT_MIN || value > INT_MAX || std::isnan(value) || std::isinf(value))
         std::cout << "char : impossible" << std::endl;
@@ -112,6 +116,8 @@ void toChar(const double &value, const std::string &type)
 
 void toInt(const std::string &str, const std::string &type)
 {
+	std::stringstream iss(str);
+
     if (type == "char")
         std::cout << "int : " << static_cast<int>(str[0]) << std::endl;
 
@@ -119,22 +125,45 @@ void toInt(const std::string &str, const std::string &type)
             || str == "nan" || str == "nanf" || str == "+inf" || str == "+inff")
         std::cout << "int : impossible" << std::endl;
 
-    else
+    else if (type == "int")
     {
-        std::stringstream ss(str);
-        long long temp;
-        ss >> temp;
+        long long  temp;
+        iss >> temp;
+	
+        if (iss.fail() || !iss.eof() || temp < INT_MIN || temp > INT_MAX)
+            std::cout << "int : impossible" << std::endl;
+        else
+            std::cout << "int : " << static_cast<int>(temp) << std::endl;
+    }
+	
+	else if (type == "double")
+    {
+        double  temp;
+        iss >> temp;
 
-        // Check if the extraction succeeded and if the entire input was processed
-        if (ss.fail() || !ss.eof() || temp < INT_MIN || temp > INT_MAX)
+        if (iss.fail() || !iss.eof())
+            std::cout << "int : impossible" << std::endl;
+        else
+            std::cout << "int : " << static_cast<int>(temp) << std::endl;
+    }
+	
+	else if (type == "float")
+    {
+        float  temp;
+		std::string trim = str.substr(0, str.size() - 1); // Removes the final 'f'
+		std::istringstream iss(trim);
+        iss >> temp;
+
+        if (iss.fail() || !iss.eof())
             std::cout << "int : impossible" << std::endl;
         else
             std::cout << "int : " << static_cast<int>(temp) << std::endl;
     }
 }
 
-void toFloat(const double &value, const std::string &type)
+void toFloat(const std::string &str, const std::string &type)
 {
+	const double &value = static_cast<double>(atof(str.c_str()));
 	float fl = static_cast<float>(value);
 	(void)type;
 	std::cout << std::fixed << std::setprecision(2) << "float : " << fl << "f" << std::endl;
@@ -149,13 +178,9 @@ void    ScalarConverter::convert(const std::string &str)
 		std::cerr << RED "Error: "<< type << RESET << std::endl;
 		return; }
 	std::cout << GREEN "Type: " << type << "\n" RESET << std::endl;
-	if (type == "char")
-	{
-		toChar(static_cast<double>(str[0]), type);
-		toInt(str, type);
-		toFloat(static_cast<double>(str[0]), type);
-	}
-	float nb = static_cast<float>(atof(str.c_str()));
-	std::cout << nb << std::endl;
-	toFloat(nb, type);
+	
+	toChar(str, type);
+	toInt(str, type);
+	toFloat(str, type);
+	//float nb = static_cast<float>(atof(str.c_str()));
 }

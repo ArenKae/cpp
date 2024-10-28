@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 01:12:29 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/15 04:32:31 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/28 15:02:44 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 class ScalarConverter
 {
 	public:
-		/*	Static member functions belong to the class rather than the object (instance).
+		/*	A static member functions belongs to the class rather than the object (instance).
 			They don't need the class to be instanciated. They have no this-> pointer, 
 			and can only access other static members of the class. */
 		static void convert(const std::string &str);

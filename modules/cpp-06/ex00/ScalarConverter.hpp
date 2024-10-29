@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 01:12:29 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/28 15:02:44 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/28 21:31:32 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <cmath>
 #include <climits>
 #include <iomanip>
+#include <limits>
 
 class ScalarConverter
 {

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 07:31:22 by dtassel           #+#    #+#             */
-/*   Updated: 2024/10/28 15:34:20 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/28 21:52:21 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void ScalarConverter::convert(const std::string &input)
     else if (type == "float")
     {
         float value = static_cast<float>(atof(input.c_str()));
+		std::cout << value << std::endl;
         toChar(static_cast<double>(value), input, type);
         toInt(input, type);
         toFloat(static_cast<double>(value), input, p, type);

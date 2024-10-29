@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 01:45:04 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/29 01:40:28 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/29 02:03:00 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static bool	isDouble(const std::string &str)
 
 	// Check for decimal point
 	int p = str.find('.');
-	if (p == -1)
+	if (p == -1 || !str[p + 1]) // If no decimal after point
 		return false;
 
 	std::istringstream    iss(str);
@@ -58,8 +58,10 @@ static bool	isFloat(const std::string &str)
 		return true;
 	else if (str[str.size() - 1] == 'f') // Checks if str ends with an 'f'
 	{
-		std::string trimmed = str.substr(0, str.size() - 1); // Removes the final 'f'
-		std::istringstream    iss(trimmed);
+		if (!(std::isdigit(str[str.size() - 2])))
+			return false;
+		std::string trim = str.substr(0, str.size() - 1); // Removes the final 'f'
+		std::istringstream    iss(trim);
 		double nb; // Double instead of float to account for large numbers
 		iss >> nb;
 		//std::cout << std::fixed << nb;
@@ -201,6 +203,29 @@ void toFloat(const std::string &str, const std::string &type, int p)
 		std::cout << std::fixed << std::setprecision(1) << "- float    : " << value << "f" << std::endl;
 }
 
+void toDouble(const std::string &str, const std::string &type, int p)
+{
+	double value = static_cast<double>(atof(str.c_str()));
+
+	if (p != -1 && type == "float")
+	{
+		if (str.length() - 2 > 16)
+			std::cout << std::fixed << std::setprecision(p - 1) << "- double   : " << value << "   (precision loss is expected)" << std::endl;
+		else
+			std::cout << std::fixed << std::setprecision(p - 1) << "- double   : " << value << std::endl;
+	}
+	else if (p != -1)
+	{
+		if (str.length() - 1 > 16)
+			std::cout << std::fixed << std::setprecision(p) << "- double   : " << value << "   (precision loss is expected)" << std::endl;
+		else
+			std::cout << std::fixed << std::setprecision(p) << "- double   : " << value << std::endl;
+	}
+	else if (type == "char")
+		std::cout << std::fixed << std::setprecision(1) << "- double   : " << static_cast<double>(str[0]) << std::endl;
+	else
+		std::cout << std::fixed << std::setprecision(1) << "- double   : " << value << std::endl;
+}
 
 void    ScalarConverter::convert(const std::string &str)
 {
@@ -219,4 +244,5 @@ void    ScalarConverter::convert(const std::string &str)
 	toChar(str, type);
 	toInt(str, type);
 	toFloat(str, type, p);
+	toDouble(str, type, p);
 }

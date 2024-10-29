@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 07:31:22 by dtassel           #+#    #+#             */
-/*   Updated: 2024/10/28 21:52:21 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/29 01:55:53 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,13 +191,13 @@ void ScalarConverter::toInt(const std::string &input, const std::string &type)
 void ScalarConverter::toDouble(const double &value, const std::string &input, const int &p, const std::string &type)
 {
     if (p != -1 && type == "float")
-        std::cout << std::fixed << std::setprecision(p - 1) << "double : "  << value << std::endl;
+        std::cout << std::fixed << std::setprecision(p - 1) << "double1 : "  << value << std::endl;
     else if (p != -1)
-        std::cout << std::fixed << std::setprecision(p) << "double : " << value << std::endl;
+        std::cout << std::fixed << std::setprecision(p) << "double2 : " << value << std::endl;
     else if (type == "char")
-        std::cout << std::fixed << std::setprecision(1) << "double : " << static_cast<double>(input[0]) << std::endl;
+        std::cout << std::fixed << std::setprecision(1) << "double3 : " << static_cast<double>(input[0]) << std::endl;
     else
-        std::cout << std::fixed << std::setprecision(1) << "double : " << value << std::endl;
+        std::cout << std::fixed << std::setprecision(1) << "double4 : " << value << std::endl;
 }
 
 void ScalarConverter::toFloat(const double &value, const std::string &input, const int &p, const std::string &type)

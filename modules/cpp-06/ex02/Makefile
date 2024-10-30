@@ -13,16 +13,17 @@ WHITE = \033[0;97m
 
 NAME = realtype
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -Iinclude -std=c++98
 OBJF = .cache_exists	# needed to create obj/ directory
 .DEFAULT_GOAL := all	# make = make all
 update_flag := false
 
 # Directories
 OBJ_DIR = obj/
+SRC_DIR = src/
 
 # Source Files
-SRC_FILES = main.cpp Base.cpp
+SRC_FILES = main.cpp Base.cpp functions.cpp
 
 # Object Files
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
@@ -35,7 +36,7 @@ $(OBJF):
 # Creating object files (.o) from source files (.c) inside the OBJ_DIR directory.
 # The option -o indicates the name of the outpout, the option -c indicates the source that is used.
 
-$(OBJ_DIR)%.o : %.cpp | $(OBJF)
+$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp | $(OBJF)
 	@echo "$(YELLOW)Compiling $<...$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -70,6 +71,9 @@ do_fclean:
 clean :
 	@echo "$(YELLOW)Cleaning $(NAME)... $(DEF_COLOR)"
 	@rm -rf $(OBJ_DIR)
+# Mute errors by redirecting to dev/null and ensure make re doesn't stop by returning true
+	-@rm *_shrubbery 2>/dev/null || true
+
 	@if [ "$(fclean_flag)" = "false" ]; then \
 		echo "$(GREEN)>>> $(NAME) object files cleaned!$(DEF_COLOR)"; \
 fi

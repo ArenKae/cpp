@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 01:12:29 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/28 21:31:32 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/30 21:50:53 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <cctype>
-#include <cmath>
-#include <climits>
-#include <iomanip>
-#include <limits>
+#include <cmath>	// atof() isinf() isnan()
+#include <climits>	// INT_MIN and INT_MAX
+#include <iomanip>	// std::steprecision()
 
 class ScalarConverter
 {

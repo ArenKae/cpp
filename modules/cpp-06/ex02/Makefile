@@ -11,7 +11,7 @@ WHITE = \033[0;97m
 
 ### VARIABLES ###
 
-NAME = realtype
+NAME = identify_type
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -Iinclude -std=c++98
 OBJF = .cache_exists	# needed to create obj/ directory

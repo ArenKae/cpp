@@ -6,20 +6,30 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 03:30:55 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/30 16:36:31 by acosi            ###   ########.fr       */
+/*   Updated: 2024/10/30 21:30:43 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Base.hpp"
-#include "include/A.hpp"
-#include "include/B.hpp"
-#include "include/C.hpp"
-#include "include/utils.h"
-#include <iostream>
+#include "../include/Base.hpp"
+#include "../include/functions.hpp"
 
 int main()
 {
+	std::cout << MAGENTA "[RANDOM INSTANCE TEST]" RESET << std::endl;
+	Base *basePTR = generate();
 	
+    std::cout << "Identifying via pointer: ";
+    identify(basePTR);
 
+    std::cout << "Identifying via reference: ";
+    identify(*basePTR);
+
+	delete basePTR;
+
+	std::cout << "\n" MAGENTA "[UNKOWN POINTER TEST]" RESET << std::endl;
+	Base *newPTR = NULL;
+	identify(newPTR);
+	identify(*newPTR);
+    
 	return 0;
 }

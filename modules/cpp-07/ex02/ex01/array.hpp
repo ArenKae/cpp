@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 12:24:07 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/03 17:28:06 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/03 17:29:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-template<typename type>
+template<typename T>
 class array
 {
 	public:

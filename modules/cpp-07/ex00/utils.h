@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 11:59:35 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/03 12:42:53 by acosi            ###   ########.fr       */
+/*   Created: 2024/06/17 14:51:08 by acosi             #+#    #+#             */
+/*   Updated: 2024/10/15 01:25:33 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "templates.hpp"
-#include "utils.h"
-#include <iostream>
+#ifndef UTILS_H
+#define UTILS_H
 
-int main(void)
-{
-	int a = 2;
-	int b = 3;
-	
-	::swap(a,b);
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	return 0;
-}
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+#define RESET "\033[0m"
+
+#endif

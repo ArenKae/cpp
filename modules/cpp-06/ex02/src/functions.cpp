@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:37:35 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/30 21:31:20 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/03 12:22:07 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ Base *generate(void)
 	return NULL;
 }
 
-// Identify instance real type from a pointer.
+/*	Identify instance real type from a pointer.
+	A dynamic_cast is performed during execution rather than compilation.
+	It returns the adress that was converted, or NULL if the conversion failed.
+	Therefore, we must verify its success by comparing it to NULL. */
 void identify(Base *p)
 {
 	if (dynamic_cast<A*>(p) != NULL)
@@ -48,7 +51,9 @@ void identify(Base *p)
 		std::cout << RED "Error: unknown pointer type" RESET << std::endl;
 }
 
-// Identify instance real type from a reference.
+/*	Identify instance real type from a reference.
+	Since references can't be equal to NULL, we can't make a comparison to check if the cast failed.
+	Therefore, we use a try{} block to catch the exception std::bad_cast. */
 void identify(Base &p)
 {
 	bool flag = false;

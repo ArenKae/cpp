@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:33:38 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 02:07:14 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 12:42:47 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,8 @@
 class ShrubberyCreationForm : public AForm
 {
 	public: 
-		// Default Constructor
-		ShrubberyCreationForm(void);
-	
 		// Name Constructor
 		ShrubberyCreationForm(const std::string &target);
-
-		// Copy Constructor
-		ShrubberyCreationForm(const ShrubberyCreationForm &src);
 
 		// Destructor
 		~ShrubberyCreationForm();
@@ -39,6 +33,12 @@ class ShrubberyCreationForm : public AForm
 		
 	private:
 		std::string _target;
+
+		// Default Constructor
+		ShrubberyCreationForm(void);
+
+		// Copy Constructor
+		ShrubberyCreationForm(const ShrubberyCreationForm &src);
 };
 
 #endif

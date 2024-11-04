@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 01:21:20 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/20 07:13:24 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 12:44:07 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,8 @@
 class RobotomyRequestForm : public AForm
 {
 	public: 
-		// Default Constructor
-		RobotomyRequestForm(void);
-	
 		// Name Constructor
 		RobotomyRequestForm(const std::string &target);
-
-		// Copy Constructor
-		RobotomyRequestForm(const RobotomyRequestForm &src);
 
 		// Destructor
 		~RobotomyRequestForm();
@@ -41,6 +35,12 @@ class RobotomyRequestForm : public AForm
 		
 	private:
 		std::string _target;
+
+		// Default Constructor
+		RobotomyRequestForm(void);
+
+		// Copy Constructor
+		RobotomyRequestForm(const RobotomyRequestForm &src);
 };
 
 #endif

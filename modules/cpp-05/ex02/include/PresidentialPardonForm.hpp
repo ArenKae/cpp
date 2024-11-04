@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 01:58:29 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/17 02:07:27 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 12:43:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,9 @@
 
 class PresidentialPardonForm : public AForm
 {
-	public: 
-		// Default Constructor
-		PresidentialPardonForm(void);
-	
+	public:
 		// Name Constructor
 		PresidentialPardonForm(const std::string &target);
-
-		// Copy Constructor
-		PresidentialPardonForm(const PresidentialPardonForm &src);
 
 		// Destructor
 		~PresidentialPardonForm();
@@ -39,6 +33,12 @@ class PresidentialPardonForm : public AForm
 		
 	private:
 		std::string _target;
+
+		// Default Constructor
+		PresidentialPardonForm(void);
+
+		// Copy Constructor
+		PresidentialPardonForm(const PresidentialPardonForm &src);
 };
 
 #endif

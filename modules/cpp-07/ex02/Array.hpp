@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 12:24:07 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/04 10:34:00 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 11:29:39 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ class Array
 
 		// Member functions
 
-		
 		unsigned int size() const {return _size;}
 
 		const T& getElement(unsigned int index) const {return _elements[index];}

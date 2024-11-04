@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:59:35 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/04 10:47:00 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 11:28:11 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(void)
 		std::cout << YELLOW "-> Attempting to access out of bound element..." RESET << std::endl;
 		std::cout << intArray[10] << std::endl;
 	}
-	catch (const std::exception &e) {
+	catch (const std::out_of_range &e) {
 		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
 	
 	try
@@ -78,7 +78,7 @@ int main(void)
 		std::cout << YELLOW "-> Attempting to access out of bound element..." RESET << std::endl;
 		std::cout << charArray[10] << std::endl;
 	}
-	catch (const std::exception &e) {
+	catch (const std::out_of_range &e) {
 		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
 
 	return 0;

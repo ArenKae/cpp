@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 07:23:49 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/20 07:39:45 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 12:57:37 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main(void)
 	try {
 		std::cout << MAGENTA "[INVALID FORM NAME TEST]" RESET << std::endl;
         Bureaucrat b1; Intern i1; AForm *f1;
-        (void)f1;
 		f1 = i1.makeForm("homework", "home");
+		delete f1;
 	} catch (std::exception &e) {
 		std::cerr << RED "Error: " << e.what() << RESET << "\n" << std::endl;}
 

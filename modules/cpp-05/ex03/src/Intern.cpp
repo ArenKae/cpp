@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 02:28:52 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/18 02:39:16 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 13:43:47 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 #include "../include/utils.h"
 
 // Default Constructor
-Intern::Intern(void)
+Intern::Intern(void) : _form(NULL)
 {
 	std::cout << "Intern constructor called." << std::endl;
 }
 
 // Copy Constructor
-Intern::Intern(const Intern &src)
+Intern::Intern(const Intern &src) : _form(src._form)
 {
 	*this = src;
 	std::cout << "Intern copy constructor called." << std::endl;
@@ -41,7 +41,9 @@ Intern& Intern::operator=(const Intern &src)
 // Destructor
 Intern::~Intern()
 {
-	std::cout << "Intern destructor called." << std::endl; 
+	std::cout << "Intern destructor called." << std::endl;
+	if (_form)
+		delete _form;
 }
 
 //	Stream redirection (insertion: <<) operator overload
@@ -68,7 +70,7 @@ AForm* createPresidential(const std::string &target)
     return new PresidentialPardonForm(target);
 }
 
-AForm* Intern::makeForm(const std::string name, const std::string target) const
+AForm* Intern::makeForm(const std::string name, const std::string target)
 {
     // Array of valid form names
     std::string formName[3] = 
@@ -82,7 +84,8 @@ AForm* Intern::makeForm(const std::string name, const std::string target) const
     for (int i = 0; i < 3; ++i) {
         if (formName[i] == name) {
             std::cout << "Intern creates " << GREEN << name << RESET << std::endl;
-            return formArray[i](target); // Call the corresponding form creation function
+			_form = formArray[i](target); // Call the corresponding form creation function
+            return _form; // Returns a pointer to the Form for easier memory management.
         }
     }
 	// Exception for error handling with invalid form name

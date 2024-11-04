@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 02:28:56 by acosi             #+#    #+#             */
-/*   Updated: 2024/09/18 03:03:09 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 13:44:18 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ class Intern
 		Intern& operator=(const Intern &src);
 
 		// Member functions
-		AForm* makeForm(const std::string name, const std::string target) const;
+		AForm* makeForm(const std::string name, const std::string target);
+
+	private:
+		// Pointer to the created form, used for easier memory management by the destructor.
+		AForm* _form;
 };
 
 #endif

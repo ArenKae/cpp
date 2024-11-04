@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 03:30:55 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/15 02:25:54 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/04 08:42:58 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char** av)
     {
         std::cerr << RED << "Usage: ./convert <literal>" << RESET << std::endl;
         return 1;
-    }
+    }	
     ScalarConverter::convert(av[1]);
     return 0;
 }

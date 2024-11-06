@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 12:24:07 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/04 11:29:39 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/06 15:56:28 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class Array
 		// Overloade subscript operator ([])
 		T& operator[](unsigned int index)
 		{
-			if (index > _size)
+			if (index >= _size)
 				throw std::out_of_range("Index out of bounds");
 			return _elements[index];
 		}

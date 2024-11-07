@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:10:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/07 10:02:30 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/07 11:06:33 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <sstream>
 #include <algorithm>
 #include <exception>
-#include <list>
+
 #include "utils.h"
 
 // Custom exception class

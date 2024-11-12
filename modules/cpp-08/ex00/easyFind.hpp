@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:10:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/12 14:46:40 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/12 20:25:26 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
     }
 };
 
-template<typename T>
+template <typename T>
 typename T::iterator easyfind(T& container, int value)
 {
 	typename T::iterator it = std::find(container.begin(), container.end(), value);

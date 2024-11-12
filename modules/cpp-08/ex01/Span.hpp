@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:24:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/12 19:07:40 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/12 21:02:51 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
+#include "utils.h"
 
 class Span
 {
@@ -41,6 +42,21 @@ class Span
 		int shortestSpan() const;
 		int longestSpan() const;
 
+		// Function template to add a range of iterators to the Span
+		template <typename iterator>
+		void addRange(iterator begin, iterator end)
+		{
+			// Calculate the number of elements to add
+			unsigned int numToAdd = std::distance(begin, end);
+			
+			// Check if there is enough space in the Span to add these elements
+			if (_sp.size() + numToAdd > _size)
+				throw std::out_of_range("Not enough space in Span to add the range.");
+			// Insert the elements into the Span
+			_sp.insert(_sp.end(), begin, end);
+			std::cout << "Range successfully added. Span capacity: " << YELLOW << _sp.size()  << "/" << _size << RESET << std::endl;
+		}
+
 		// Custom nested exception class
 		class SpanFullException : public std::exception {
 			private:
@@ -53,10 +69,10 @@ class Span
 			// Override the what() method to return the value and an error message
 			const char* what() const throw() {
 			std::cout << "Value " << _value << " could not be added. ";
-			return "SpanFullException"; } };
+			return ""; } };
 
 	private:
-		std::vector<int> lst;
+		std::vector<int> _sp;
 		unsigned int _size;
 };
 

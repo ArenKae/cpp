@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:10:13 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/07 11:06:33 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/12 14:46:40 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ private:
     int _value;
 
 public:
-    // Constructor to accept an error code
+    // Constructor that accepts a value as parameter and stores it
     ValueNotFoundException(int value) : _value(value) {}
 
-    // Override the what() method to return a message including the error code
+    // Override the what() method to return the value and an error message
     const char* what() const throw() {
         std::cout << _value << " : ";
         return "value not found";

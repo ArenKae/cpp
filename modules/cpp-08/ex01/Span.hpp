@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:24:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/12 21:02:51 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/13 00:40:15 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ class Span
 			return ""; } };
 
 	private:
+		/*	A std::vector is a good choice of container here because elements are stored 
+		contiguously in memory, which means efficient access and iteration. */
 		std::vector<int> _sp;
 		unsigned int _size;
 };

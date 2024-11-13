@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/13 04:04:23 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/13 21:39:05 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	std::cout << MAGENTA "[MUTANT STACK TESTS]" RESET << std::endl;
 	MutantStack<int> mstack;
 	
-	mstack.push(5);
+	mstack.push(4);
 	mstack.push(17);
 	printContainer(mstack, "mstack");
 	printStackInfos(mstack, "mstack");
@@ -61,7 +61,7 @@ int main()
 	std::cout << MAGENTA "\n[LIST TESTS]" RESET << std::endl;
 	std::list<int> lst;
 	
-	lst.push_back(5);
+	lst.push_back(4);
 	lst.push_back(17);
 	printContainer(lst, "lst");
 	printListInfos(lst, "lst");

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:31:32 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/13 04:02:50 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/13 21:37:31 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ struct PrintFunction {
 
 // Template function to print the content of a container
 template <typename T>
-void printContainer(const T& container, const std::string &name) {
+void printContainer (T& container, const std::string &name) {
 	std::cout << BLUE << name << RESET " = [ ";
     std::for_each(container.begin(), container.end(), PrintFunction<T>());
     std::cout << "]" << std::endl;
@@ -81,7 +81,7 @@ void printStackInfos(const T& container, const std::string &name) {
 
 // Template function to print list infos and make the main program more readable
 template <typename T>
-void printListInfos(const T& container, const std::string &name) {
+void printListInfos (const T& container, const std::string &name) {
 	std::cout << BLUE << name << RESET " size is " GREEN << container.size() << RESET 
 	" and the last element is " YELLOW << container.back() << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/14 01:08:47 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/14 02:26:45 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int ac, char **av)
 	if (!btc.processInput(av[1]))
 		return 1;
 
-	btc.printData("2012-11-27");
+	//btc.printData("2012-11-27");
 	
     return 0;
 }

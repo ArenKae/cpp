@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:32 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/15 19:22:27 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/15 20:51:53 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,6 @@ bool BitcoinExchange::processInput(const char *filename)
 	return true;
 }
 
-/**********************************/
-/*******[ HELPER FUNCTIONS ]*******/
-/**********************************/
-
 // Parse the map with an iterator to find the closest date.
 const std::string BitcoinExchange::findClosestDate(const std::string &date)
 {
@@ -122,6 +118,17 @@ const std::string BitcoinExchange::findClosestDate(const std::string &date)
     }
     return it->first; // Return the key holding the date
 }
+
+
+void BitcoinExchange::printOutput(const std::string &date, const double &value)
+{
+	std::cout << (_match_flag == 1 ? GREEN : YELLOW) << 
+	date << " => " << value << " = " << value * _data[date] << RESET << std::endl;
+}
+
+/**********************************/
+/*******[ HELPER FUNCTIONS ]*******/
+/**********************************/
 
 // Check the validity of the current line from the input file
 static bool isValidFormat(const std::string &line)
@@ -213,10 +220,4 @@ static bool isValidNumber(const std::string &valueStr)
         return false; }
 
 	return true;
-}
-
-void BitcoinExchange::printOutput(const std::string &date, const double &value)
-{
-	std::cout << (_match_flag == 1 ? GREEN : YELLOW) << 
-	date << " => " << value << " = " << value * _data[date] << RESET << std::endl;
 }

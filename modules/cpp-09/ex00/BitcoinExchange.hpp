@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:25 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/14 04:05:45 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/15 19:16:39 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <fstream>		// opening file, getline()
 #include <sstream>		// string stream manipulation
 #include <cstdlib>		// atof()
+#include <climits>		// INT_MIN and INT_MAX
 
 class BitcoinExchange
 {
@@ -37,16 +38,15 @@ class BitcoinExchange
 		// Member Functions
 		bool loadData(const char *filename);
 		bool processInput(const char *filename);
-		
-		void printData(const std::string &key);
 
 	private:
-		// Map container to store the database
-		std::map<std::string, double> _data;
+		std::map<std::string, double> _data; // Map container to store the database
+		int _match_flag;	// Flag to determine if an exact match was found in the database
 		
 		// Member functions
 		bool openInputFile(const char *filename);
-		std::string findClosestDate(const std::string &date);
+		const std::string findClosestDate(const std::string &date);
+		void printOutput(const std::string &date, const double &value);
 
 };
 

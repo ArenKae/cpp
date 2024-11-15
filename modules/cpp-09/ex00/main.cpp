@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/14 02:26:45 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/15 19:13:56 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@ int main(int ac, char **av)
 	if (ac != 2) {
 		std::cerr << RED << "Error: wrong number of arguments\n" YELLOW 
 		"Usage: " RESET "./btc <" BLUE "file" RESET ">"<< std::endl;
-		return 1; }
+		return EXIT_FAILURE; }
 	
 	BitcoinExchange btc;
 	if (!btc.loadData("data.csv")) {
 		std::cerr << RED "Error: could not open database." RESET << std::endl;
-		return 1; }
+		return EXIT_FAILURE; }
 	
-	if (!btc.processInput(av[1]))
-		return 1;
+	if (!btc.processInput(av[1])) {
+		std::cerr << RED "Error: could not open input file." RESET << std::endl;
+		return EXIT_FAILURE; }
 
-	//btc.printData("2012-11-27");
-	
-    return 0;
+    return EXIT_SUCCESS;
 }

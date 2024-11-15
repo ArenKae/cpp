@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:31:32 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/13 21:37:31 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/15 17:42:57 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ class MutantStack : public std::stack<T> // Inerit from stack to access function
 	
 		// Define the iterator aliases for readability
 		typedef	typename std::stack<T>::container_type::iterator iterator;
-		typedef	typename std::stack<T>::container_type::const_iterator const_iterator;
 
 		/*	this->c is a protected member of std::stack representing the underlying container.
 			We can then access its own begin() and end() members to allow iteration. */

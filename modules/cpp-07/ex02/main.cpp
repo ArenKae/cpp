@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:59:35 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/06 16:05:06 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/15 17:41:39 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int main(void)
 		copyArray.printSize("copyArray");
 		std::cout << CYAN "copyArray" RESET " inital content: " << copyArray << std::endl;
 
-		std::cout << YELLOW "-> Modifyning charArray content..." RESET << std::endl;
+		std::cout << YELLOW "-> Modifying charArray content..." RESET << std::endl;
 		charArray[5] = '4';
 		charArray[6] = '2';
 		std::cout << CYAN "charArray" RESET " modified content: " << charArray << RESET << std::endl;

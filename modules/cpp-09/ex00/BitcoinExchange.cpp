@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:32 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/15 20:51:53 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/16 18:31:08 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ const std::string BitcoinExchange::findClosestDate(const std::string &date)
     }
     return it->first; // Return the key holding the date
 }
-
 
 void BitcoinExchange::printOutput(const std::string &date, const double &value)
 {

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:32 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/16 18:47:42 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/16 18:50:41 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,6 +203,8 @@ static bool isValidNumber(const std::string &valueStr)
 		std::cerr << RED "Error: missing number value." RESET << std::endl;
         return false; }
 
+	// Create an input stream stream (iss) from the value string.
+	// Attempt to convert it to a double and check if the operation failed.
 	std::istringstream iss(valueStr);
 	double value;
 	iss >> value;

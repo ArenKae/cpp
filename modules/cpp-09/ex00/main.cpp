@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/15 19:13:56 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/16 18:32:22 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(int ac, char **av)
 		return EXIT_FAILURE; }
 	
 	BitcoinExchange btc;
+	
 	if (!btc.loadData("data.csv")) {
 		std::cerr << RED "Error: could not open database." RESET << std::endl;
 		return EXIT_FAILURE; }

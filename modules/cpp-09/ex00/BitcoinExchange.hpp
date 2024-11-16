@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:25 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/16 18:33:06 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/16 18:41:59 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <fstream>		// opening file, getline()
 #include <sstream>		// string stream manipulation
-#include <cstdlib>
+#include <cstdlib>		// atof()
 #include <climits>
 
 class BitcoinExchange

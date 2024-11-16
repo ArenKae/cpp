@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:25 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/16 18:43:45 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/16 18:47:16 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class BitcoinExchange
 
 	private:
 		std::map<std::string, double> _data; // Map container to store the database
-		int _match_flag;	// Flag to determine if an exact match was found in the database
+		int _color_flag;  // Flag to change the color in output if an exact or an closest match was found
 		
 		// Member functions
 		bool openInputFile(const char *filename);

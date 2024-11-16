@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:32 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/16 18:31:08 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/16 18:47:42 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static bool isValidDate(const std::string &date);
 /***********************************/
 
 // Default Constructor
-BitcoinExchange::BitcoinExchange(void) : _match_flag(1) {}
+BitcoinExchange::BitcoinExchange(void) : _color_flag(1) {}
 
 // Copy Constructor
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src) { *this = src; }
@@ -93,7 +93,7 @@ bool BitcoinExchange::processInput(const char *filename)
 			std::string closestDate = findClosestDate(date);
 			double value = atof(valueStr.c_str());
 			printOutput(closestDate, value);
-			_match_flag = 1;
+			_color_flag = 1;	// Reset the color flag for output
 		}
 	}
 	file.close();
@@ -114,14 +114,14 @@ const std::string BitcoinExchange::findClosestDate(const std::string &date)
         if (it == _data.begin()) // Error: no earlier date
 			return "";
         --it;	// Go to the closest earlier date
-		_match_flag = 0;
+		_color_flag = 0;	// Update the flag to get correct color in output
     }
     return it->first; // Return the key holding the date
 }
 
 void BitcoinExchange::printOutput(const std::string &date, const double &value)
 {
-	std::cout << (_match_flag == 1 ? GREEN : YELLOW) << 
+	std::cout << (_color_flag == 1 ? GREEN : YELLOW) << 
 	date << " => " << value << " = " << value * _data[date] << RESET << std::endl;
 }
 

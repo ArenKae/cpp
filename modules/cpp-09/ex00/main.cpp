@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/16 18:32:22 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/17 19:43:04 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int main(int ac, char **av)
 		std::cerr << RED "Error: could not open input file." RESET << std::endl;
 		return EXIT_FAILURE; }
 
-    return EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:32 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/17 19:42:31 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/25 09:55:33 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ bool BitcoinExchange::processInput(const char *filename)
 	
 	while (getline(file, line))
 	{
-		if (!isValidFormat(line)) // Skip the search if an error was found
+		if (line.empty() || !isValidFormat(line)) // Skip the search if an error was found
 			continue;
 		
 		std::stringstream ss(line);
@@ -172,8 +172,8 @@ static bool isValidDate(const std::string &date)
 	int day = std::atoi(date.substr(8, 2).c_str());
 
 	// Validate year
-	if (year < 2009) {
-		std::cerr << RED "Error: invalid date. => " << date << RESET << std::endl;
+	if (year < 2009 || (year == 2009 && month == 1 && day == 1)) {
+		std::cerr << RED "Error: no entry in database before 2009-01-02" RESET << std::endl;
 		return false; }
 	
 	// Validate month

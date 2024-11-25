@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 07:41:25 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/25 09:21:33 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/25 23:10:06 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <iostream>
 #include <stack>
+#include <cstdlib>		// atoi()
 #include <sstream>		// string stream manipulation
 #include <stdexcept>
-#include <cstdlib>		// atoi()
 
 class RPN
 {

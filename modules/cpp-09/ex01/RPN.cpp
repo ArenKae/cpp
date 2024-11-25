@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 07:41:30 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/25 09:23:47 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/25 10:00:37 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ bool RPN::isOperator(const std::string &token)
 	return token.size() == 1 && (token[0] == '+' || token[0] == '-' || token[0] == '*' || token[0] == '/');
 }
 
+// Perfom the operation between a and b using operand op
 int RPN::performOperation(int a, int b, char op) const
 {
 	switch (op)

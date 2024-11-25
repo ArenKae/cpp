@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 07:41:25 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/25 08:41:23 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/25 09:21:33 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stack>
 #include <sstream>		// string stream manipulation
 #include <stdexcept>
+#include <cstdlib>		// atoi()
 
 class RPN
 {
@@ -32,7 +33,7 @@ class RPN
 
 	private:
 		// Helper member functions
-		bool performOperation(int a, int b, char op) const;
+		int performOperation(int a, int b, char op) const;
 		bool isNumber(const std::string &token);
 		bool isOperator(const std::string &token);	
 };

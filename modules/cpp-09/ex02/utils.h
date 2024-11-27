@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/27 02:03:36 by acosi            ###   ########.fr       */
+/*   Created: 2024/06/17 14:51:08 by acosi             #+#    #+#             */
+/*   Updated: 2024/10/15 01:25:33 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
-#include "utils.h"
+#ifndef UTILS_H
+#define UTILS_H
 
-int main(int ac, char **av)
-{
-	if (ac != 2) {
-		std::cerr << RED "Error" RESET << std::endl;
-		return 1; }
-	
-	try {
-		RPN rpn;
-		std::cout << GREEN << rpn.compute(av[1]) << RESET << std::endl; }
-	catch (const std::exception &e) {
-		std::cerr << RED << e.what() << RESET << std::endl; }
-}
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+#define RESET "\033[0m"
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 02:02:06 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/30 06:34:27 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/30 07:27:20 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ class PmergeMe
 		void sortList(std::list<int> &lst);
 
 	private:
-		void mergeInsertSortVector(std::vector<int> &vec, size_t left, size_t right);
-    	void mergeVector(std::vector<int> &vec, size_t left, size_t mid, size_t right);
+		void mergeSortVector(std::vector<int> &left, std::vector<int> &right, std::vector<int> &result);
     	void mergeSortList(std::list<int> &left, std::list<int> &right, std::list<int> &lst_sorted);
 };
 

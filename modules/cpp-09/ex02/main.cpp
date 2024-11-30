@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/30 07:00:20 by acosi            ###   ########.fr       */
+/*   Updated: 2024/11/30 07:38:16 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static bool isValidInput(const std::string &arg)
 {
 	try { isPositiveInt(arg); }
 	catch (const std::exception& e) {
-    	std::cerr << RED "Error: " << e.what() << RESET << std::endl; 
+		std::cerr << RED "Error: " << e.what() << RESET << std::endl; 
 		return false; }
 	return true;
 }
@@ -53,25 +53,37 @@ int main(int ac, char **av)
 		
 	// Display unsorted sequence
 	std::cout << "Before: ";
-    // for (size_t i = 0; i < vec.size(); ++i) std::cout << vec[i] << " ";
-    // std::cout << std::endl;
-	for (std::list<int>::iterator it = lst.begin(); it != lst.end(); ++it) std::cout << YELLOW << *it << " ";
-    std::cout << RESET << std::endl;
+	for (size_t i = 0; i < vec.size(); ++i) std::cout << YELLOW << vec[i] << " ";
+	std::cout << RESET << std::endl;
+
+	// Sort and measure time for vector
+	clock_t start = clock();
+	pm.sortVector(vec);
+	clock_t end = clock();
+	double vecTime = static_cast<double>(end - start) * 1000 / CLOCKS_PER_SEC;
 
 	// Sort and measure time for list
-	clock_t start = clock();
+	start = clock();
 	pm.sortList(lst);
-	clock_t end = clock();
+	end = clock();
 	double lstTime = static_cast<double>(end - start) * 1000 / CLOCKS_PER_SEC;
 
 	// Display sorted sequence
 	std::cout << "After: ";
-    for (std::list<int>::iterator it = lst.begin(); it != lst.end(); ++it) std::cout << GREEN << *it << " ";
-    std::cout << RESET << std::endl;
+	for (size_t i = 0; i < vec.size(); ++i)
+		std::cout << GREEN << vec[i] << " ";
+	std::cout << RESET << std::endl;
+	/*for (std::list<int>::iterator it = lst.begin(); it != lst.end(); ++it)
+		std::cout << GREEN << *it << " ";
+	std::cout << RESET << std::endl;*/
 
 	// Display times
-    std::cout << "Time to process a range of " << lst.size() 
-	<< " elements with std::list: " BLUE << lstTime << " ms" RESET << std::endl;
-
+	/*	In a vector, elements are stored contiguously in memory, so every access 
+		or insertion operation is constant time O(1).
+		A (doubly linked) list where every element contains a pointer to the next one. The data
+		is scattered in memory, so access is slower and insertion requires to create a new node.
+		Hence, the vector is generally faster to sort. */
+	std::cout << "Time to sort a vector of " << vec.size() << " elements: " BLUE << vecTime << " ms" RESET << std::endl;
+	std::cout << "Time to sort a list of " << lst.size() << " elements: " BLUE << lstTime << " ms" RESET << std::endl;
 	return 0;
 }

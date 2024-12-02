@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:50:25 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/17 19:42:44 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 16:06:37 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class BitcoinExchange
 		// Member functions
 		bool openInputFile(const char *filename);
 		const std::string findClosestDate(const std::string &date);
-		void printOutput(const std::string &date, const double &value);
+		void printOutput(const std::string &date, const std::string &ClosestDate, const double &value);
 };
 
 #endif

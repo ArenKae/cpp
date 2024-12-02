@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/12 21:09:01 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:49:43 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,27 @@ int main()
 	std::cout << MAGENTA "\n[LARGE SPAN TEST]" RESET << std::endl;
 	try {
 		Span lsp = Span(10000);
-		std::vector<int> list(10000);
+		std::vector<int> vec(10000);
 		for (int i = 0; i < 10000; ++i)
-			list[i] = i;
+			vec[i] = i;
 		
-		lsp.addRange(list.begin(), list.end());
+		lsp.addRange(vec.begin(), vec.end());
 			
 		std::cout << "Shortest span = " << lsp.shortestSpan() << std::endl;
 		std::cout << "Longest span = " << lsp.longestSpan() << std::endl; }
 	catch (const std::exception &e) {
 		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
 
-	// Test for a large span but to small to hold the requested range
+	// Test for a large span but too small to hold the requested range
 	std::cout << MAGENTA "\n[LARGE SPAN FULL TEST]" RESET << std::endl;
 	try {
 		Span lsp = Span(10000);
-		std::vector<int> list(10000);
+		std::vector<int> vec(10000);
 		for (int i = 0; i < 10000; ++i)
-			list[i] = i;
+			vec[i] = i;
 		
 		lsp.addNumber(42);
-		lsp.addRange(list.begin(), list.end());}
+		lsp.addRange(vec.begin(), vec.end());}
 	catch (const std::exception &e) {
 		std::cerr << RED "Error: " << e.what() << RESET << std::endl; }
     return 0;

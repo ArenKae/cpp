@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 02:02:02 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/30 07:29:30 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:30:51 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ void PmergeMe::mergeSortList(std::list<int> &left, std::list<int> &right, std::l
 	// Compare the numbers in each list and push the smallest one to result until one sublist reach its end
 	while (itL != left.end() && itR != right.end())
 	{
-		if (*itL <= *itR) result.push_back(*itL++);
-		else result.push_back(*itR++);
+		if (*itL <= *itR)
+			result.push_back(*itL++);
+		else 
+			result.push_back(*itR++);
 	}
 
 	// Any remaining elements are appended at the end.

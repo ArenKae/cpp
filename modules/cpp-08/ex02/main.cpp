@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:23:01 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/13 21:39:05 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:57:37 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int main()
 	std::cout << "*it = " << *++it << std::endl;
 	std::cout << RED "-> Decrementing iterator it..." RESET << std::endl;
 	std::cout << "*it = " << *--it << std::endl;
-	
 	
 	std::cout << RED "-> Iterating through mstack using begin iterator :" RESET << std::endl;
 	for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)

@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 03:30:55 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/30 21:30:43 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 08:15:38 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int main()
 	std::cout << MAGENTA "[RANDOM INSTANCE TEST]" RESET << std::endl;
 	Base *basePTR = generate();
 	
-    std::cout << "Identifying via pointer: ";
-    identify(basePTR);
+	std::cout << "Identifying via pointer: ";
+	identify(basePTR);
 
-    std::cout << "Identifying via reference: ";
-    identify(*basePTR);
+	std::cout << "Identifying via reference: ";
+	identify(*basePTR);
 
 	delete basePTR;
 
@@ -30,6 +30,6 @@ int main()
 	Base *newPTR = NULL;
 	identify(newPTR);
 	identify(*newPTR);
-    
+	
 	return 0;
 }

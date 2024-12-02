@@ -6,12 +6,12 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:34:33 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/30 16:34:46 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 08:02:38 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef B_HPP
-#define BN_HPP
+#define B_HPP
 
 #include "Base.hpp"
 

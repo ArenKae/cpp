@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:37:35 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/03 12:22:07 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 08:14:05 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void identify(Base &p)
 	
 	try 
 	{
-		dynamic_cast<A&>(p);
+		A& a = dynamic_cast<A&>(p);
+		(void)a; // To prevent unused variable error during compilation
 		flag = true;
 		std::cout << YELLOW "A" RESET << std::endl;
 	}
@@ -70,7 +71,8 @@ void identify(Base &p)
 	{
 		try
 		{
-			dynamic_cast<B&>(p);
+			B& b = dynamic_cast<B&>(p);
+			(void)b;
 			flag = true;
 			std::cout << YELLOW "B" RESET << std::endl;
 		}
@@ -81,7 +83,8 @@ void identify(Base &p)
 	{
 		try 
 		{
-			dynamic_cast<C&>(p);
+			C& c = dynamic_cast<C&>(p);
+			(void)c;
 			flag = true;
 			std::cout << YELLOW "C" RESET << std::endl;
 		}

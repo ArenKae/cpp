@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 01:45:04 by acosi             #+#    #+#             */
-/*   Updated: 2024/10/29 02:03:00 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 07:02:24 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static bool	isFloat(const std::string &str)
 		std::istringstream    iss(trim);
 		double nb; // Double instead of float to account for large numbers
 		iss >> nb;
-		//std::cout << std::fixed << nb;
 		return (iss.eof() && !iss.fail());
 	}
 	return false;

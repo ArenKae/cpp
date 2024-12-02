@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 12:24:07 by acosi             #+#    #+#             */
-/*   Updated: 2024/12/02 08:53:47 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 09:45:50 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class Array
 			return *this;
 		}
 
-		// Overloade subscript operator ([])
+		// Overloaded subscript operator ([])
 		T& operator[](unsigned int index)
 		{
 			if (index >= _size)
@@ -70,8 +70,7 @@ class Array
 		
 		void printSize(const std::string &name) const
 		{std::cout << "Size of " CYAN << name << RESET ": " GREEN << _size << RESET << std::endl;}
-		
-
+	
 	private:
 		unsigned int _size;
 		T* _elements;

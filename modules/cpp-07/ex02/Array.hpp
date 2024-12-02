@@ -6,7 +6,7 @@
 /*   By: acosi <acosi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 12:24:07 by acosi             #+#    #+#             */
-/*   Updated: 2024/11/06 15:56:28 by acosi            ###   ########.fr       */
+/*   Updated: 2024/12/02 08:53:47 by acosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ class Array
 		Array(void) : _size(0), _elements(NULL) {}
 
 		// Size constructor : Creates an Array of n elements of type T
-		Array(unsigned int n) : _size(n), _elements(new T[n]()) {}
+		Array(unsigned int n) : _size(n), _elements(new T[n]())
+		{
+			for (unsigned int i = 0; i < this->_size; ++i)
+				_elements[i] = 0; // Make sure everything is initialized
+		}
 
 		// Copy constructor
 		Array(const Array &src) : _size(src._size), _elements(new T[src._size])

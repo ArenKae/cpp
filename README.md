@@ -1,4 +1,4 @@
-# Cpp_Modules
+# Cpp Modules
 
 <p align="center">
   <img src="https://github.com/ArenKae/ArenKae/blob/main/42%20badges/cppe.png" alt="ft_irc 42 project badge"/>
@@ -6,6 +6,8 @@
 
 ## An introduction to C++
 C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes". This repository is a collection of modules that make up 42 school's C++ piscine. The modules gradually introduce students to concepts related to object-oriented programming, such as classes, inheritance, ad-hoc polymorphism, templates, containers, and more.
+
+The "cours" folder contains a few files that are not real code, but rather commented examples (in french) that helped me understand the basic notions of the language while I was learning.
 
 ### 💻 This project was developed on Ubuntu 24.04.2 LTS.
 

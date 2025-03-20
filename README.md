@@ -12,8 +12,9 @@ The "cours" folder contains a few files that are not real code, but rather comme
 ### 💻 This project was developed on Ubuntu 24.04.2 LTS.
 
 ## Status
-Finished 12/06/2024.
-
+✅ Completed on: 12/06/2024
+</br>
+🏆 Grades:
 * Cpp00: grade: 80%
 * Cpp01: grade: 100%
 * Cpp02: grade: 80%
